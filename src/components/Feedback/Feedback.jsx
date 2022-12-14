@@ -3,7 +3,7 @@ import styles from "./styleFeedback.module.css";
 
 const Feedback = () => {
   const token = "5833738553:AAEMCjrwc4cdRe389dVNBmFhmXuNt5XCjGI";
-  const chatId = "997039388";
+  const chatId = "-870490551";
 
   const [valueName, setValueName] = React.useState("");
   const [valueEmail, setValueEmail] = React.useState("");
