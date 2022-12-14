@@ -3,7 +3,7 @@ import './App.scss';
 import MapWithFavPlaces from './components/MapWithFavPlaces';
 
 import { SwiperSlider } from './components/SwiperSlider/SwiperSlider'
-import './App.css';
+import './App.scss';
 
 function App() {
   return (
