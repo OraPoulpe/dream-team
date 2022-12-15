@@ -1,0 +1,93 @@
+$burger-bar-height: 2px;
+$burger-bar-width: 50px;
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 9;
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+    }
+
+    &__burger {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        cursor: pointer;
+        padding: 10px;
+        
+        & .burger__bar1, & .burger__bar2, & .burger__bar3 {
+            background-color: #25262A;
+            transition: 0.2s;
+        } & .burger__bar1 {
+            width: $burger-bar-width;
+            height: $burger-bar-height + 1;
+        } & .burger__bar2 {
+            width: $burger-bar-width * 0.7;
+            height: $burger-bar-height;
+        } & .burger__bar3 {
+            width: $burger-bar-width;
+            height: $burger-bar-height + 1;
+        }
+        
+        
+        &.open .burger__bar1 {
+            transform: translate(-3px, 8px) rotate(-45deg);
+        }
+        
+        &.open .burger__bar2 {
+            opacity: 0;
+        }
+        
+        &.open .burger__bar3 {
+            transform: translate(-2px, -8px) rotate(45deg);
+            height: $burger-bar-height + 1;
+        }
+    }
+
+    &__title {
+        font-size: 3rem;
+        font-weight: 600;
+        color: #000;
+    }
+
+    &__tools {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 4px;
+        background-color: #000;
+        border-radius: 40px;
+
+        [class^="tools__toggle-"] {
+            display: flex;
+            align-items: center;
+            width: 35px;
+            height: 35px;
+            justify-content: center;
+            gap: 4px;
+            padding: 4px;
+            background-color: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+
+            // .toggle-theme__icon {
+            //     font-size: 1.5rem;
+            //     color: #000;
+            // }
+
+            // .toggle-theme__text {
+            //     font-size: 1.2rem;
+            //     font-weight: 600;
+            //     color: #000;
+            // }
+        }
+    }
+}
