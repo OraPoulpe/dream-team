@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Burger from './Burger'
 import './index.scss'
 import Menu from './Menu'
+import Theme from './togglers/Theme'
 
 
 export default function Header() {
@@ -15,9 +16,10 @@ export default function Header() {
                     <h1><a href="/">teamFrame</a></h1>
                 </div>
                 <div className="header__tools">
-                    <div className="tools__toggle-theme">
+                    {/* <div className="tools__toggle-theme">
                         <span>th</span>
-                    </div>
+                    </div> */}
+                    <Theme />
                     <div className="tools__toggle-lang">
                         <span>la</span>
                     </div>
