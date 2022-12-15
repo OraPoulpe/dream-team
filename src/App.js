@@ -4,7 +4,8 @@ import './App.scss';
 import Header from './components/Header';
 import MapWithFavPlaces from './components/MapWithFavPlaces';
 import { SwiperSlider } from './components/SwiperSlider/SwiperSlider'
-
+import './App.css';
+import Feedback from './components/Feedback/Feedback';
 
 function App() {
   return (<>
@@ -14,6 +15,7 @@ function App() {
       <YMaps>
         <MapWithFavPlaces />
       </YMaps>
+      <Feedback/>
     </main>
   </>);
 }
