@@ -1,8 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500&display=swap');
-
-.App {
-  font-family: 'Nunito', sans-serif;
-}
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap");
 
 .container {
   width: 1440px;
@@ -53,9 +49,9 @@ body {
   z-index: 2;
 }
 body {
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans", sans-serif;
   transition: all 0.5s;
-  background-color: var(--DarkBlue);
+  background: #efeff2;
 }
 
 html {
