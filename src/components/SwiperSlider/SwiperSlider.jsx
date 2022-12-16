@@ -56,7 +56,7 @@ const data = [
       github: "link",
       telegram: "link",
     },
-    photo: "link",
+    photo: "links",
   },
 ];
 
