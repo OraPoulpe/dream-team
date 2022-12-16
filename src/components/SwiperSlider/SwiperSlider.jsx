@@ -14,83 +14,125 @@ import "swiper/css/navigation";
 import "swiper/css/scrollbar";
 
 import "./SwiperSlider.css";
+import { Titles } from "../Titles/Titles";
 
 const data = [
   {
     id: "1",
-    name: "Иван Иванов",
+    name: "Владимир Крылов",
     profession: "Frontend developer",
-    vita: "Lorem ipsum dolor sit amet consectetur. Egestas quam mauris fermentum commodo posuere. Non massa ultricies tincidunt leo ornare. Tincidunt maecenas ultricies id in cras augue. Viverra enim ullamcorper venenatis molestie amet purus justo mauris elit. Commodo elit amet vitae id odio id aenean dui.",
-    skills: ["HTML", "CSS", "JavaScript", "React"],
+    vita: "Увлечения: каяки, багги, сплавы, скалолазание, шахматы, коньки, теннис, театры, мюзиклы. Читаю фэнтези.",
+    skills: ["HTML (HTML5)", "CSS (CSS3)", "SCSS/SASS", "BEM", "Styled-Components", "FSD-methodology", "FLUX|MVC|MVP-architecture", "JavaScript (ES5+)", "TypeScript (4+)", "React (17+)", "Redux (4+) [pure+ toolkit, saga, thunk]", "Storybook", "Jest + screenshot testing"],
     socials: {
-      github: "link",
-      telegram: "link",
+      email: "krylov.dev@yandex.ru",
+      github: "https://github.com/krylovDev",
+      telegram: "https://t.me/krylov_dev",
     },
-    photo: "link",
+    photo: "https://raw.githubusercontent.com/ilrosch/dream-team/developer/src/components/SwiperSlider/photo_vladimir_krylov.jpg",
   },
 
   {
     id: "2",
-    name: "Иван Иванов",
+    name: "Заур Нурмагомедов",
     profession: "Frontend developer",
-    vita: "Lorem ipsum dolor sit amet consectetur. Egestas quam mauris fermentum commodo posuere. Non massa ultricies tincidunt leo ornare. Tincidunt maecenas ultricies id in cras augue. Viverra enim ullamcorper venenatis molestie amet purus justo mauris elit. Commodo elit amet vitae id odio id aenean dui.",
-    skills: ["HTML", "CSS", "JavaScript", "React"],
+    vita: "Frontend-разработчик, чутка шарящий в backend. Фанат японской манги. Очень хочет прописать sudo apt-get update.",
+    skills: ["HTML (HTML5)", "CSS (CSS3)", "SCSS/SASS", "JavaScript (ES6)", "React", "Redux toolkit", "MUI", "Python", "FastAPI", "Flask", "SQL", "Linux"],
     socials: {
-      github: "link",
-      telegram: "link",
+      email: "nurmagomedoffzaur@yandex.ru",
+      github: "https://github.com/mrskyguy",
+      telegram: "https://t.me/skyguy",
     },
-    photo: "link",
+    photo: "https://raw.githubusercontent.com/ilrosch/dream-team/developer/src/components/SwiperSlider/photo_nurmagomedov_zaur.jpg",
   },
 
   {
     id: "3",
-    name: "Иван Иванов",
-    profession: "Frontend developer",
-    vita: "Lorem ipsum dolor sit amet consectetur. Egestas quam mauris fermentum commodo posuere. Non massa ultricies tincidunt leo ornare. Tincidunt maecenas ultricies id in cras augue. Viverra enim ullamcorper venenatis molestie amet purus justo mauris elit. Commodo elit amet vitae id odio id aenean dui.",
-    skills: ["HTML", "CSS", "JavaScript", "React"],
+    name: "Илья Росчихмаров",
+    profession: "Frontend developer, Web_designer",
+    vita: "Если сказать кратко, то я «самоучка». Знания в области веб-программирования черпал из различных книг, статей и курсов на образовательных площадках Beonmax и Freecodecamp. Закончил обучение более 2-х лет назад, но до сих пор продолжаю совершенствовать свои навыки и изучаю новые технологии. Также имею опыт в разработке веб-дизайна.",
+    skills: ["HTML (HTML5)", "CSS (CSS3)", "Sass/Scss", "JavaScript", "React", "BEM", "Gulp", "Figma", "Photoshop"],
     socials: {
-      github: "link",
-      telegram: "link",
+      email: "ilrosch@yandex.ru",
+      github: "https://github.com/ilrosch/",
+      telegram: "https://t.me/ilrosch",
     },
-    photo: "link",
+    photo: "https://raw.githubusercontent.com/ilrosch/dream-team/developer/src/components/SwiperSlider/photo_Ilya_roschimarov.jpg",
+  },
+
+  {
+    id: "4",
+    name: "Сергей Сазонов",
+    profession: "Frontend developer",
+    vita: "Играю в футбол, волейбол, катаюсь на сноуборде, люблю готовить и играть в настольные игры.",
+    skills: ["HTML (HTML5)", "CSS (CSS3)", "Python", "JavaScript", "React", "SQL", "Redux toolkit"],
+    socials: {
+      email: "ssazonov69@gmail.com",
+      github: "https://github.com/OraPoulpe",
+      telegram: "https://t.me/OraPoulpe",
+    },
+    photo: "https://raw.githubusercontent.com/ilrosch/dream-team/developer/src/components/SwiperSlider/photo_sergey_sazonov.jpg",
   },
 ];
 
 export const SwiperSlider = () => {
   return (
-    <Swiper effect={"cards"} grabCursor={true} modules={[EffectCards, Navigation, Scrollbar, A11y]} navigation scrollbar={{ draggable: true }} initialSlide={1} className="slider">
-      {data.map((user) => (
-        <SwiperSlide key={user.id} className="slider__wrapper">
-          <div className="slider__content">
-            <div className="slider__colum">
-              <div className="slider__round">
-                <img src={user.photo} />
-              </div>
-              <div className="slider__social">
-                <a href={user.socials.github}>
-                  <img src={github} alt="" />
-                </a>
-                <a href={user.socials.telegram}>
-                  <img src={telegram} alt="" />
-                </a>
-              </div>
+    <>
+      <Titles title={"Наша команда"} subtitle={"Здесь будет текст"} />
+      <Swiper effect={"cards"} grabCursor={true} modules={[EffectCards, Navigation, Scrollbar, A11y]} navigation scrollbar={{ draggable: true }} className="slider">
+        <SwiperSlide className="slider__wrapper">
+          <div className="slider__content slider__content--first">
+            <div className="slider__block slider__block--first">
+              <h3>Давайте знакомиться!</h3>
             </div>
-            <div className="slider__colum">
-              <h2 className="slider__title">{user.name}</h2>
-              <h3 className="slider__subtitle">{user.profession}</h3>
-              <p className="slider__text">{user.vita}</p>
-
-              <div className="slider__skills">
-                {user.skills.map((skill) => (
-                  <div className="slider__skill">
-                    <p>{skill}</p>
+            <div className="slider__wrap">
+              {data !== undefined &&
+                data.map((user) => (
+                  <div className="slider__card">
+                    <div className="slider__photo slider__photo--small">
+                      <img src={user.photo} alt="Фото" />
+                    </div>
+                    <h2 className="slider__title slider__title--small">{user.name}</h2>
+                    <h3 className="slider__subtitle slider__subtitle--small">{user.profession}</h3>
                   </div>
                 ))}
-              </div>
             </div>
           </div>
         </SwiperSlide>
-      ))}
-    </Swiper>
+        {data !== undefined &&
+          data.map((user) => (
+            <SwiperSlide key={user.id} className="slider__wrapper">
+              <div className="slider__content">
+                <div className="slider__block"></div>
+                <div className="slider__photo">
+                  <img src={user.photo} alt="Фото" />
+                </div>
+                <h2 className="slider__title">{user.name}</h2>
+                <h3 className="slider__subtitle">{user.profession}</h3>
+                <p className="slider__vita">{user.vita}</p>
+                <div className="slider__skills">
+                  {user.skills.map((skill) => (
+                    <div className="slider__skill">
+                      <p>{skill}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="slider__contacts">
+                  <a href={`mailto:${user.socials.email}`}>{user.socials.email}</a>
+                  <div className="slider__social">
+                    <a href={user.socials.github}>
+                      <img src={github} alt="github" />
+                    </a>
+
+                    <a href={user.socials.telegram}>
+                      <img src={telegram} alt="telegram" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+      </Swiper>
+    </>
   );
 };
