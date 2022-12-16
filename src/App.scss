@@ -1,10 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap");
 
-main.container {
-  display: flex;
-  flex-direction: column;
-  gap: 120px;
-}
 .container {
   width: 1440px;
   margin: 0 auto;
@@ -54,8 +49,9 @@ body {
   z-index: 2;
 }
 body {
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans", sans-serif;
   transition: all 0.5s;
+  background: #efeff2;
 }
 
 html {
