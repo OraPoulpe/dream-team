@@ -85,9 +85,6 @@ $burger-bar-width: 50px;
         display: flex;
         align-items: center;
         gap: 8px;
-        padding: 4px;
-        background-color: #000;
-        border-radius: 40px;
 
         [class^="tools__toggle-"] {
             display: flex;
@@ -97,8 +94,6 @@ $burger-bar-width: 50px;
             justify-content: center;
             gap: 4px;
             padding: 4px;
-            background-color: #fff;
-            border-radius: 50%;
             cursor: pointer;
         }
     }
@@ -113,13 +108,13 @@ $burger-bar-width: 50px;
         .container {
             display: flex;
             align-items: flex-start;
+            justify-content: space-between;
             margin: 0 auto;
             position: relative;
         }
     }
 
     &__menu {
-        position: absolute;
         transform: translateY(-100%);
         opacity: 0;
         visibility: hidden;
@@ -154,8 +149,6 @@ $burger-bar-width: 50px;
     }
 
     &__lang-menu {
-        position: absolute;
-        right: 0;
         transform: translateY(-100%);
         opacity: 0;
         visibility: hidden;
