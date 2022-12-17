@@ -2,7 +2,7 @@ import classNames from 'classnames'
 
 
 export default function Burger({ menuSettings }) {
-    const {isMenuOpened, setIsMenuOpened} = menuSettings
+    const { isMenuOpened, setIsMenuOpened } = menuSettings
     return (
         <div
             className={

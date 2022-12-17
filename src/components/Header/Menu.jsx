@@ -7,17 +7,17 @@ export default function Menu({ menuSettings }) {
     // При клике вне меню, меню закрывается
     useEffect(() => {
         function handleClickOutside(event) {
-          if (!isMenuOpened) return
-    
-          const menuBlock = document.querySelector(".header__menu")
-          const burger = document.querySelector(".header__burger")
-          if (!event.path.includes(menuBlock) && !event.path.includes(burger)) {
-            setIsMenuOpened(false)
-          }
+            if (!isMenuOpened) return
+
+            const menuBlock = document.querySelector(".header__menu")
+            const burger = document.querySelector(".header__burger")
+            if (!event.path.includes(menuBlock) && !event.path.includes(burger)) {
+                setIsMenuOpened(false)
+            }
         }
-    
+
         document.addEventListener('click', handleClickOutside, false)
-      })
+    })
 
     return (
         <div
@@ -25,16 +25,16 @@ export default function Menu({ menuSettings }) {
         >
             <ul className="menu__list">
                 <li className="menu__item">
-                    <a href="#team">Наша команда</a>
+                    <a href="#team" onClick={() => setIsMenuOpened(false)}>Наша команда</a>
                 </li>
                 <li className="menu__item">
-                    <a href="#contact">Связаться</a>
+                    <a href="#contact" onClick={() => setIsMenuOpened(false)}>Связаться</a>
                 </li>
                 <li className="menu__item">
-                    <a href="#fav-places">Любимые места</a>
+                    <a href="#fav-places" onClick={() => setIsMenuOpened(false)}>Любимые места</a>
                 </li>
                 <li className="menu__item">
-                    <a href="#projects">Проекты</a>
+                    <a href="#projects" onClick={() => setIsMenuOpened(false)}>Проекты</a>
                 </li>
             </ul>
         </div>
