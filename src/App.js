@@ -16,7 +16,7 @@ function App() {
       <YMaps>
         <MapWithFavPlaces />
       </YMaps>
-      <Feedback/>
+      <Feedback />
     </main>
   </ThemeProvider>);
 }
