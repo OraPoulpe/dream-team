@@ -16,7 +16,8 @@ $burger-bar-width: 50px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1rem 0;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
     }
 
     &__burger {
@@ -26,6 +27,7 @@ $burger-bar-width: 50px;
         gap: 6px;
         cursor: pointer;
         padding: 10px;
+        padding-left: 0;
 
         & .burger__bar1,
         & .burger__bar2,
