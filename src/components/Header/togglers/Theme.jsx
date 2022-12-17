@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { ThemeContext } from '../../../context/ThemeProvider'
-import './index.scss'
+import './theme.scss'
 
 
 export default function Theme() {
