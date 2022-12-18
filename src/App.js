@@ -1,24 +1,25 @@
-import { YMaps } from '@pbe/react-yandex-maps';
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ThemeProvider from "./context/ThemeProvider";
+import Header from "./components/Header/Header";
+import { Home } from "./pages/Home/Home";
+import { Page404 } from "./pages/Page404/Page404";
 import './App.scss';
-
-import ThemeProvider from './context/ThemeProvider';
-import Header from './components/Header';
-import MapWithFavPlaces from './components/MapWithFavPlaces';
-import { SwiperSlider } from './components/SwiperSlider/SwiperSlider'
-import './App.scss';
-import Feedback from './components/Feedback/Feedback';
 
 function App() {
-  return (<ThemeProvider>
-    <Header />
-    <main className='container'>
-      <SwiperSlider />
-      <YMaps>
-        <MapWithFavPlaces />
-      </YMaps>
-      <Feedback />
-    </main>
-  </ThemeProvider>);
+  return (
+    <ThemeProvider>
+      <Header />
+      <div className="container">
+        <BrowserRouter>
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path="*" element={<Page404 />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </ThemeProvider>
+  );
 }
 
 export default App;
