@@ -1,0 +1,105 @@
+.footer {
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__about {
+        display: flex;
+        height: 100%;
+        
+        .about__content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .about__title {
+                font-size: 1.5rem;
+                font-weight: 600;
+                margin-top: auto;
+                margin-bottom: 0.5rem;
+            }
+
+            .about__start {
+                font-weight: 600;
+                font-size: 1.2rem;
+                color: #494949;
+                margin-bottom: 1rem;
+            }
+
+            .about__text {
+                max-width: 400px;
+                font-size: 1.2rem;
+                line-height: 19px;
+                letter-spacing: 0.02em;
+
+                color: #636363;
+                margin-bottom: 2rem;
+            }
+
+            .about__contact-btn {
+                background: #5C369A;
+                color: #fff;
+                font-size: 1.25rem;
+                border-radius: 5px;
+                align-self: flex-start;
+                padding: 1rem 3rem;
+            }
+
+            .about__copyright {
+                margin-top: auto;
+                display: flex;
+                flex-direction: column;
+                font-size: 1.2rem;
+                line-height: 19px;
+                letter-spacing: 0.02em;
+                color: #9F9F9F;
+
+                .copyright__plea a {
+                    color: inherit;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &__navigation {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+
+        .navigation__title {
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: #22242A;
+        }
+
+        .nav__list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+
+            .nav__item {
+                border: 1px solid #AFAFAF;
+                color: #636363;
+                border-radius: 7px;
+                transition: .25s;
+                padding: 1rem 0;
+                
+                a {
+                    padding: 1rem 3rem;
+                    color: inherit;
+                    font-size: 1.2rem;
+                }
+
+                &:hover {
+                    color: #5C369A;
+                    border:  1px solid #5C369A;
+                }
+            }
+        }
+    }
+}

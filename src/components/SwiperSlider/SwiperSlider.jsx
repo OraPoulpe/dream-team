@@ -76,7 +76,7 @@ const data = [
 
 export const SwiperSlider = () => {
   return (
-    <>
+    <div>
       <Titles title={"Наша команда"} subtitle={"Здесь будет текст"} />
       <Swiper effect={"cards"} grabCursor={true} modules={[EffectCards, Navigation, Scrollbar, A11y]} navigation scrollbar={{ draggable: true }} className="slider">
         <SwiperSlide className="slider__wrapper">
@@ -133,6 +133,6 @@ export const SwiperSlider = () => {
             </SwiperSlide>
           ))}
       </Swiper>
-    </>
+    </div>
   );
 };
