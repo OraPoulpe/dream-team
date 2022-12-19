@@ -13,7 +13,7 @@ import "swiper/css/effect-cards";
 import "swiper/css/navigation";
 import "swiper/css/scrollbar";
 
-import "./SwiperSlider.css";
+import "./SwiperSlider.scss";
 import { Titles } from "../Titles/Titles";
 
 const data = [
@@ -28,7 +28,7 @@ const data = [
       github: "https://github.com/krylovDev",
       telegram: "https://t.me/krylov_dev",
     },
-    photo: "https://raw.githubusercontent.com/ilrosch/dream-team/developer/src/components/SwiperSlider/photo_vladimir_krylov.jpg",
+    photo: "https://raw.githubusercontent.com/ilrosch/dream-team/development/src/components/SwiperSlider/photo_vladimir_krylov.jpg",
   },
 
   {
@@ -42,13 +42,13 @@ const data = [
       github: "https://github.com/mrskyguy",
       telegram: "https://t.me/skyguy",
     },
-    photo: "https://raw.githubusercontent.com/ilrosch/dream-team/developer/src/components/SwiperSlider/photo_nurmagomedov_zaur.jpg",
+    photo: "https://raw.githubusercontent.com/ilrosch/dream-team/development/src/components/SwiperSlider/photo_nurmagomedov_zaur.jpg",
   },
 
   {
     id: "3",
     name: "Илья Росчихмаров",
-    profession: "Frontend developer, Web_designer",
+    profession: "Frontend developer, Web-designer",
     vita: "Если сказать кратко, то я «самоучка». Знания в области веб-программирования черпал из различных книг, статей и курсов на образовательных площадках Beonmax и Freecodecamp. Закончил обучение более 2-х лет назад, но до сих пор продолжаю совершенствовать свои навыки и изучаю новые технологии. Также имею опыт в разработке веб-дизайна.",
     skills: ["HTML (HTML5)", "CSS (CSS3)", "Sass/Scss", "JavaScript", "React", "BEM", "Gulp", "Figma", "Photoshop"],
     socials: {
@@ -56,7 +56,7 @@ const data = [
       github: "https://github.com/ilrosch/",
       telegram: "https://t.me/ilrosch",
     },
-    photo: "https://raw.githubusercontent.com/ilrosch/dream-team/developer/src/components/SwiperSlider/photo_Ilya_roschimarov.jpg",
+    photo: "https://raw.githubusercontent.com/ilrosch/dream-team/development/src/components/SwiperSlider/photo_Ilya_roschimarov.jpg",
   },
 
   {
@@ -70,7 +70,7 @@ const data = [
       github: "https://github.com/OraPoulpe",
       telegram: "https://t.me/OraPoulpe",
     },
-    photo: "https://raw.githubusercontent.com/ilrosch/dream-team/developer/src/components/SwiperSlider/photo_sergey_sazonov.jpg",
+    photo: "https://raw.githubusercontent.com/ilrosch/dream-team/development/src/components/SwiperSlider/photo_sergey_sazonov.jpg",
   },
 ];
 

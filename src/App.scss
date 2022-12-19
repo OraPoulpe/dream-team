@@ -3,7 +3,6 @@
 .container {
   max-width: 1440px;
   margin: 0 auto;
-
 }
 
 main.container {
@@ -15,7 +14,8 @@ main.container {
 }
 header > .container, main.container, footer.container {
   @media (max-width: 1439px) {
-    padding: 0 16px;
+    width: 100%;
+    padding: 0 20px;
   }
 }
 
