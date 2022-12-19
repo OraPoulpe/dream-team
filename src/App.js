@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import MapWithFavPlaces from "./components/MapWithFavPlaces";
 import { SwiperSlider } from "./components/SwiperSlider/SwiperSlider";
 import Feedback from './components/Feedback/Feedback';
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           </YMaps>
           <Feedback/>
         </main>
+        <Footer />
       </LangProvider>
     </ThemeProvider>
   );

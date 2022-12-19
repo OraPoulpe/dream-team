@@ -4,15 +4,19 @@
   max-width: 1440px;
   margin: 0 auto;
 
-  @media (max-width: 1439px) {
-    padding: 0 16px;
-  }
 }
 
 main.container {
   display: flex;
   flex-direction: column;
   gap: 64px;
+  margin-bottom: 64px;
+
+}
+header > .container, main.container, footer.container {
+  @media (max-width: 1439px) {
+    padding: 0 16px;
+  }
 }
 
 * {
