@@ -24,7 +24,8 @@
     "lint:css-fix": "stylelint \"src/**/*.{css,scss}\" --fix",
     "lint:css": "stylelint \"src/**/*.{css,scss}\"",
     "lint:js-fix": "eslint \"src/**/*.{js,jsx}\" --fix",
-    "lint:js": "eslint \"src/**/*.{js,jsx}\""
+    "lint:js": "eslint \"src/**/*.{js,jsx}\"",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": "./.eslintrc.json"
@@ -49,6 +50,7 @@
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.0",
     "prettier": "^2.8.1",
     "stylelint": "^14.16.0",
     "stylelint-config-prettier": "^9.0.4",
