@@ -10,9 +10,12 @@ main.container {
   flex-direction: column;
   gap: 64px;
   margin-bottom: 64px;
-  min-height: 85vh;  // Чтобы футер был всегда внизу
+  min-height: 85vh; // Чтобы футер был всегда внизу
 }
-header > .container, main.container, footer.container {
+
+header > .container,
+main.container,
+footer.container {
   @media (max-width: 1439px) {
     width: 100%;
     padding: 0 20px;
@@ -24,19 +27,22 @@ header > .container, main.container, footer.container {
   margin: 0;
   border: 0;
 }
+
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-size: inherit;
   font-weight: 400;
 }
+
 :focus,
 :active {
   outline: none;
 }
+
 a:focus,
 a:active {
   outline: none;
@@ -54,7 +60,6 @@ body {
   position: relative;
   height: 100%;
   width: 100%;
-  font-size: 100%;
   line-height: 1;
   font-size: 14px;
   -ms-text-size-adjust: 100%;
@@ -62,6 +67,7 @@ body {
   -webkit-text-size-adjust: 100%;
   z-index: 2;
 }
+
 body {
   font-family: "Open Sans", sans-serif;
   transition: all 0.5s;
@@ -71,6 +77,7 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
 input,
 button,
 textarea {
@@ -80,23 +87,30 @@ textarea {
 input::-ms-clear {
   display: none;
 }
+
 button {
   cursor: pointer;
 }
+
 button::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
+
+/* stylelint-disable-next-line no-descending-specificity */
 a,
 a:visited {
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: none;
 }
+
 ul li {
   list-style: none;
 }
+
 img {
   vertical-align: top;
 }
