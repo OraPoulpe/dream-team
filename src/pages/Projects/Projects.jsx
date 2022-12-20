@@ -1,21 +1,24 @@
 import github from "../../components/SwiperSlider/icons/github.svg";
 import telegram from "../../components/SwiperSlider/icons/telegram.svg";
 import photo from "./project.png";
-import { Titles } from "../../components/Titles/Titles";
-import { projects } from "../../mock/projects";
+import Titles from "../../components/Titles/Titles";
+import projects from "../../mock/projects";
 import "./Projects.scss";
 
-export const Projects = () => {
+export default function Projects() {
   return (
     <main className="projects">
-      <Titles title={"Наши проекты"} subtitle={"Lorem ipsum dolor sit amet consectetur. Porta cursus qu+is blandit orci leo."} />
+      <Titles
+        title="Наши проекты"
+        subtitle="Lorem ipsum dolor sit amet consectetur. Porta cursus qu+is blandit orci leo."
+      />
       <div className="projects__container">
         {projects !== undefined &&
           projects.map((project) => (
             <div className="projects__cards">
               <div className="projects__card">
                 <img src={photo} alt="project" className="image" />
-                <div className="projects__shadow"></div>
+                <div className="projects__shadow" />
 
                 <div className="projects__header">
                   <h2 className="projects__title">{project.name}</h2>
@@ -48,7 +51,7 @@ export const Projects = () => {
 
                 <div className="projects__contact">
                   <a href={project.demo}>
-                    <button>посмотреть проект</button>
+                    <button type="button">Посмотреть проект</button>
                   </a>
 
                   <div className="projects__icons">
@@ -71,4 +74,4 @@ export const Projects = () => {
       </div>
     </main>
   );
-};
+}

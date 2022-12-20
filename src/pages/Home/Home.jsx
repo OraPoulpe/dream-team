@@ -1,9 +1,9 @@
 import { YMaps } from "@pbe/react-yandex-maps";
 import MapWithFavPlaces from "../../components/MapWithFavPlaces";
-import { SwiperSlider } from "../../components/SwiperSlider/SwiperSlider";
+import SwiperSlider from "../../components/SwiperSlider/SwiperSlider";
 import Feedback from "../../components/Feedback/Feedback";
 
-export const Home = () => {
+export default function Home() {
   return (
     <>
       <SwiperSlider />
@@ -13,4 +13,4 @@ export const Home = () => {
       <Feedback />
     </>
   );
-};
+}

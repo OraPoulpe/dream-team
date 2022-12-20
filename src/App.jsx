@@ -5,11 +5,11 @@ import ThemeProvider from "./context/ThemeProvider";
 import LangProvider from "./context/LangProvider";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { Home } from "./pages/Home/Home";
-import { Page404 } from "./pages/Page404/Page404";
-import { Projects } from "./pages/Projects/Projects";
-import './App.scss'
 
+import Home from "./pages/Home/Home";
+import Page404 from "./pages/Page404/Page404";
+import Projects from "./pages/Projects/Projects";
+import "./App.scss";
 
 function App() {
   return (
