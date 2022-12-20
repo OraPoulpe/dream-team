@@ -12,6 +12,7 @@ main.container {
   margin-bottom: 64px;
   min-height: 85vh; // Чтобы футер был всегда внизу
 }
+
 header > .container,
 main.container,
 footer.container {
@@ -26,19 +27,22 @@ footer.container {
   margin: 0;
   border: 0;
 }
+
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-size: inherit;
   font-weight: 400;
 }
+
 :focus,
 :active {
   outline: none;
 }
+
 a:focus,
 a:active {
   outline: none;
@@ -56,13 +60,13 @@ body {
   position: relative;
   height: 100%;
   width: 100%;
-  font-size: 100%;
   line-height: 1;
   font-size: 14px;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+
 body {
   position: relative;
   font-family: "Open Sans", sans-serif;
@@ -74,6 +78,7 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
 input,
 button,
 textarea {
@@ -83,23 +88,30 @@ textarea {
 input::-ms-clear {
   display: none;
 }
+
 button {
   cursor: pointer;
 }
+
 button::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
+
+/* stylelint-disable-next-line no-descending-specificity */
 a,
 a:visited {
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: none;
 }
+
 ul li {
   list-style: none;
 }
+
 img {
   vertical-align: top;
 }

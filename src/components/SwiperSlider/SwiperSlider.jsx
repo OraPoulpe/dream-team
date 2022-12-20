@@ -1,6 +1,5 @@
-// Import icons
-import github from "./icons/github.svg";
-import telegram from "./icons/telegram.svg";
+/* eslint-disable max-len */
+/* eslint-disable import/no-unresolved */
 
 // Import Swiper React components
 import React from "react";
@@ -14,7 +13,9 @@ import "swiper/css/navigation";
 import "swiper/css/scrollbar";
 
 import "./SwiperSlider.scss";
-import { Titles } from "../Titles/Titles";
+import telegram from "./icons/telegram.svg";
+import github from "./icons/github.svg";
+import Titles from "../Titles/Titles";
 
 const data = [
   {
@@ -22,13 +23,28 @@ const data = [
     name: "Владимир Крылов",
     profession: "Frontend developer",
     vita: "Увлечения: каяки, багги, сплавы, скалолазание, шахматы, коньки, теннис, театры, мюзиклы. Читаю фэнтези.",
-    skills: ["HTML (HTML5)", "CSS (CSS3)", "SCSS/SASS", "BEM", "Styled-Components", "FSD-methodology", "FLUX|MVC|MVP-architecture", "JavaScript (ES5+)", "TypeScript (4+)", "React (17+)", "Redux (4+) [pure+ toolkit, saga, thunk]", "Storybook", "Jest + screenshot testing"],
+    skills: [
+      "HTML (HTML5)",
+      "CSS (CSS3)",
+      "SCSS/SASS",
+      "BEM",
+      "Styled-Components",
+      "FSD-methodology",
+      "FLUX|MVC|MVP-architecture",
+      "JavaScript (ES5+)",
+      "TypeScript (4+)",
+      "React (17+)",
+      "Redux (4+) [pure+ toolkit, saga, thunk]",
+      "Storybook",
+      "Jest + screenshot testing",
+    ],
     socials: {
       email: "krylov.dev@yandex.ru",
       github: "https://github.com/krylovDev",
       telegram: "https://t.me/krylov_dev",
     },
-    photo: "https://raw.githubusercontent.com/ilrosch/dream-team/development/src/components/SwiperSlider/photo_vladimir_krylov.jpg",
+    photo:
+      "https://raw.githubusercontent.com/ilrosch/dream-team/development/src/components/SwiperSliderphoto_vladimir_krylov.jpg",
   },
 
   {
@@ -36,13 +52,27 @@ const data = [
     name: "Заур Нурмагомедов",
     profession: "Frontend developer",
     vita: "Frontend-разработчик, чутка шарящий в backend. Фанат японской манги. Очень хочет прописать sudo apt-get update.",
-    skills: ["HTML (HTML5)", "CSS (CSS3)", "SCSS/SASS", "JavaScript (ES6)", "React", "Redux toolkit", "MUI", "Python", "FastAPI", "Flask", "SQL", "Linux"],
+    skills: [
+      "HTML (HTML5)",
+      "CSS (CSS3)",
+      "SCSS/SASS",
+      "JavaScript (ES6)",
+      "React",
+      "Redux toolkit",
+      "MUI",
+      "Python",
+      "FastAPI",
+      "Flask",
+      "SQL",
+      "Linux",
+    ],
     socials: {
       email: "nurmagomedoffzaur@yandex.ru",
       github: "https://github.com/mrskyguy",
       telegram: "https://t.me/skyguy",
     },
-    photo: "https://raw.githubusercontent.com/ilrosch/dream-team/development/src/components/SwiperSlider/photo_nurmagomedov_zaur.jpg",
+    photo:
+      "https://raw.githubusercontent.com/ilrosch/dream-team/development/src/components/SwiperSlider/photo_nurmagomedov_zaur.jpg",
   },
 
   {
@@ -56,7 +86,8 @@ const data = [
       github: "https://github.com/ilrosch/",
       telegram: "https://t.me/ilrosch",
     },
-    photo: "https://raw.githubusercontent.com/ilrosch/dream-team/development/src/components/SwiperSlider/photo_Ilya_roschimarov.jpg",
+    photo:
+      "https://raw.githubusercontent.com/ilrosch/dream-team/development/src/components/SwiperSlider/photo_Ilya_roschimarov.jpg",
   },
 
   {
@@ -70,15 +101,23 @@ const data = [
       github: "https://github.com/OraPoulpe",
       telegram: "https://t.me/OraPoulpe",
     },
-    photo: "https://raw.githubusercontent.com/ilrosch/dream-team/development/src/components/SwiperSlider/photo_sergey_sazonov.jpg",
+    photo:
+      "https://raw.githubusercontent.com/ilrosch/dream-team/development/src/components/SwiperSlider/photo_sergey_sazonov.jpg",
   },
 ];
 
-export const SwiperSlider = () => {
+export default function SwiperSlider() {
   return (
     <div>
-      <Titles title={"Наша команда"} subtitle={"Здесь будет текст"} />
-      <Swiper effect={"cards"} grabCursor={true} modules={[EffectCards, Navigation, Scrollbar, A11y]} navigation scrollbar={{ draggable: true }} className="slider">
+      <Titles title="Наша команда" subtitle="Здесь будет текст" />
+      <Swiper
+        effect="cards"
+        grabCursor
+        modules={[EffectCards, Navigation, Scrollbar, A11y]}
+        navigation
+        scrollbar={{ draggable: true }}
+        className="slider"
+      >
         <SwiperSlide className="slider__wrapper">
           <div className="slider__content slider__content--first">
             <div className="slider__block slider__block--first">
@@ -102,7 +141,7 @@ export const SwiperSlider = () => {
           data.map((user) => (
             <SwiperSlide key={user.id} className="slider__wrapper">
               <div className="slider__content">
-                <div className="slider__block"></div>
+                <div className="slider__block" />
                 <div className="slider__photo">
                   <img src={user.photo} alt="Фото" />
                 </div>
@@ -135,4 +174,4 @@ export const SwiperSlider = () => {
       </Swiper>
     </div>
   );
-};
+}

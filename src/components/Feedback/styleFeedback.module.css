@@ -1,13 +1,12 @@
-.feedback_layout{
-    max-width: 500px;
-
+.feedback_layout {
+  max-width: 500px;
 }
 
-.input_layout{
-    height: 40px;
-    margin: 5px;
+.input_layout {
+  height: 40px;
+  margin: 5px;
 }
 
-.button_submit{
-    margin: 10px;
+.button_submit {
+  margin: 10px;
 }

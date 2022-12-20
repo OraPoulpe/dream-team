@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./styleFeedback.module.css";
 
-const Feedback = () => {
+function Feedback() {
   const token = "5833738553:AAEMCjrwc4cdRe389dVNBmFhmXuNt5XCjGI";
   const chatId = "-870490551";
 
@@ -10,8 +10,8 @@ const Feedback = () => {
   const [valueText, setValueText] = React.useState("");
 
   const handleSubmit = async (event) => {
-    let message = `Новое сообщение 
-                    %0AИмя: ${valueName} 
+    const message = `Новое сообщение
+                    %0AИмя: ${valueName}
                     %0AПочта: ${valueEmail}
                     %0AСообщение: ${valueText}`;
 
@@ -20,7 +20,7 @@ const Feedback = () => {
       `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&parse_mode=html&text=${message}`,
       {
         method: "GET",
-      }
+      },
     );
     setValueName("");
     setValueEmail("");
@@ -34,7 +34,7 @@ const Feedback = () => {
         <legend>Форма для связи с нами</legend>
 
         <div className={styles.input_layout}>
-          <label>Как вас зовут</label>
+          <label htmlFor="name">Как вас зовут</label>
           <input
             value={valueName}
             type="text"
@@ -42,11 +42,12 @@ const Feedback = () => {
             onChange={(e) => {
               setValueName(e.target.value);
             }}
+            id="name"
           />
         </div>
 
         <div className={styles.input_layout}>
-          <label>Введите почту</label>
+          <label htmlFor="email">Введите почту</label>
           <input
             value={valueEmail}
             type="email"
@@ -54,11 +55,12 @@ const Feedback = () => {
             onChange={(e) => {
               setValueEmail(e.target.value);
             }}
+            id="email"
           />
         </div>
 
         <div className={styles.input_layout}>
-          <label>Введите сообщение</label>
+          <label htmlFor="message">Введите сообщение</label>
           <textarea
             value={valueText}
             type="text"
@@ -66,6 +68,7 @@ const Feedback = () => {
             onChange={(e) => {
               setValueText(e.target.value);
             }}
+            id="message"
           />
         </div>
 
@@ -73,6 +76,6 @@ const Feedback = () => {
       </form>
     </div>
   );
-};
+}
 
 export default Feedback;
