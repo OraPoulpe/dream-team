@@ -21,13 +21,13 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint:css-fix": "stylelint \"src/**/*.{css,scss}\" --fix"
+    "lint:css-fix": "stylelint \"src/**/*.{css,scss}\" --fix",
+    "lint:css": "stylelint \"src/**/*.{css,scss}\"",
+    "lint:js-fix": "eslint \"src/**/*.{js,jsx}\" --fix",
+    "lint:js": "eslint \"src/**/*.{js,jsx}\""
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "extends": "./.eslintrc.json"
   },
   "browserslist": {
     "production": [
