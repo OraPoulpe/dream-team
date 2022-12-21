@@ -20,7 +20,7 @@ import slider from "../../mock/slider";
 
 export default function SwiperSlider() {
   return (
-    <div>
+    <div id="teams">
       <Titles title="Наша команда" subtitle="Здесь будет текст" />
       <Swiper
         effect="cards"
