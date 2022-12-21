@@ -16,8 +16,9 @@ export default function Home() {
         <YMaps>
           <MapWithFavPlaces />
         </YMaps>
-        <Feedback />
       </div>
+      
+      <Feedback />
     </>
   );
 }
