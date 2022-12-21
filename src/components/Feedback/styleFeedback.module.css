@@ -1,6 +1,7 @@
 .feedback_layout {
   display: flex;
   justify-content: center;
+
   /* max-width: 500px; */
 }
 
@@ -17,11 +18,11 @@
   padding: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: center;;
+  justify-content: center;
 }
 
 .text_main_form {
-  font-family: "Open Sans";
+  font-family: "Open Sans", serif;
   font-style: normal;
   font-weight: 400;
   font-size: 25px;
@@ -34,6 +35,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   /* height: 40px; */
   width: 400px;
   margin: 5px 0;
@@ -70,7 +72,7 @@
   margin-right: 15px;
 }
 
-/* .input_checkbox::after {  
+/* .input_checkbox::after {
     border: fff;
     width: 40px;
     height: 40px;
@@ -81,42 +83,30 @@
 .button_submit_correct {
   width: 400px;
   height: 60px;
-
   background: #5c369a;
   border-radius: 12px;
-  font-family: "Open Sans";
+  font-family: "Open Sans", serif;
   font-weight: 600;
   font-size: 20px;
-
   text-align: center;
-
-  color: #ffffff;
+  color: #fff;
 }
 
 .button_submit_not_correct {
   width: 400px;
   height: 60px;
-
   background: #5c369a;
   border-radius: 12px;
   opacity: 0.5;
-  font-family: "Open Sans";
+  font-family: "Open Sans", serif;
   font-weight: 600;
   font-size: 20px;
-
   text-align: center;
-
-  color: #ffffff;
+  color: #fff;
 }
 
 .validName {
-  color: rgb(237, 86, 86);
+  color: rgb(237 86 86);
   visibility: hidden;
   text-align: center;
 }
-
-.input_layout {
-  height: 40px;
-  margin: 5px;
-}
-

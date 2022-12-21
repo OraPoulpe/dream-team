@@ -46,18 +46,18 @@ function Feedback() {
   const checkStyle = () => {
     if (valueConsent && isCorrectName && isCorrectEmail) {
       return styles.button_submit_correct;
-    } else {
-      return styles.button_submit_not_correct;
     }
+      return styles.button_submit_not_correct;
+
   };
 
   /*
   Validation Name
   */
 
-  const isValidName = (valueName) => {
+  const isValidName = (name) => {
     const text = document.getElementById("valid-name");
-    if (/^[a-zA-Z0-9а-яА-Я]+$/.test(valueName) || valueName === "") {
+    if (/^[a-zA-Z0-9а-яА-Я]+$/.test(name) || name === "") {
       text.style.visibility = "hidden";
       setIsCorrectName(true);
     } else {
@@ -70,18 +70,18 @@ function Feedback() {
   Validation Email
   */
 
-  const isValidEmail = (valueEmail) => {
+  const isValidEmail = (email) => {
     const text = document.getElementById("valid-email");
 
     if (
-      (/^[a-z0-9@.]+$/.test(valueEmail) &&
-        valueEmail.indexOf("@") !== -1 &&
-        valueEmail[0] !== "." &&
-        valueEmail[0] !== "_" &&
-        valueEmail.indexOf(".") !== -1 &&
-        valueEmail[valueEmail.indexOf("@") + 1] !== "." &&
-        valueEmail.slice(-1) !== ".") ||
-      valueEmail === ""
+      (/^[a-z0-9@.]+$/.test(email) &&
+        email.indexOf("@") !== -1 &&
+        email[0] !== "." &&
+        email[0] !== "_" &&
+        email.indexOf(".") !== -1 &&
+        email[email.indexOf("@") + 1] !== "." &&
+        email.slice(-1) !== ".") ||
+      email === ""
     ) {
       text.style.visibility = "hidden";
       setIsCorrectEmail(true);
@@ -94,16 +94,16 @@ function Feedback() {
   const checkDisabled = () => {
     if (valueConsent && isCorrectName && isCorrectEmail) {
       return false;
-    } else {
-      return true;
     }
+      return true;
+
   }
 
-  
+
 
   return (
     <div className={styles.feedback_layout}>
-      <img className={styles.svg} src={svgFeedback} />
+      <img className={styles.svg} src={svgFeedback} alt="Изображение"/>
       <form className={styles.form_layout} onSubmit={(e) => handleSubmit(e)}>
         <legend className={styles.text_main_form}>
           Форма для связи с нами
@@ -171,13 +171,14 @@ function Feedback() {
               setValueConsent(!valueConsent);
             }}
           />
+          {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
           <label>Даю согласие на обработку персональных данных</label>
         </div>
-        <span></span>
+        <span />
         <button id = 'btn-submit' disabled={checkDisabled()} className={checkStyle()} type="submit">
           Отправить форму
         </button>
-        
+
       </form>
     </div>
   );
