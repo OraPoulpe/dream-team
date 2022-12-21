@@ -16,9 +16,7 @@ export default function Header() {
       <header className="header">
         <div className="container">
           <Burger menuSettings={{ isMenuOpened, setIsMenuOpened }} />
-          <div className="header__title">
-            <h1><a href="/">teamFrame</a></h1>
-          </div>
+          <h1 className="header__title"><a href="/">DreamTeam</a></h1>
           <div className="header__tools">
             <Theme />
             <Language langMenuSettings={{ isLangMenuOpened, setIsLangMenuOpened }} />
