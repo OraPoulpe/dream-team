@@ -110,7 +110,7 @@ function Feedback() {
         </legend>
 
         <div className={styles.input_layout}>
-          <label htmlFor="name">Как вас зовут</label>
+          <label className={styles.text_ladel} htmlFor="name">Как вас зовут</label>
           <input
             className={styles.input}
             value={valueName}
@@ -129,7 +129,7 @@ function Feedback() {
         </span>
 
         <div className={styles.input_layout}>
-          <label htmlFor="email">Введите почту</label>
+          <label className={styles.text_ladel} htmlFor="email">Введите почту</label>
           <input
             className={styles.input}
             value={valueEmail}
@@ -148,7 +148,7 @@ function Feedback() {
         </span>
 
         <div className={styles.input_layout}>
-          <label htmlFor="message">Введите сообщение</label>
+          <label className={styles.text_ladel} htmlFor="message">Введите сообщение</label>
           <textarea
             className={styles.input_textarea}
             value={valueText}
@@ -172,7 +172,7 @@ function Feedback() {
             }}
           />
           {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-          <label>Даю согласие на обработку персональных данных</label>
+          <label className={styles.text_ladel} >Даю согласие на обработку персональных данных</label>
         </div>
         <span />
         <button id = 'btn-submit' disabled={checkDisabled()} className={checkStyle()} type="submit">
