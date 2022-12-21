@@ -45,7 +45,7 @@ const projects = [
             telegram: "https://t.me/skyguy",
         },
         demo: "https://github.com/mrSkyGuy/amv.net",
-        image: "zaur_nurmagomedov/amv.jpg",
+        image: "https://raw.githubusercontent.com/ilrosch/dream-team/development/src/img/projects/zaur_nurmagomedov/amv.jpg",
     },
 
     {
@@ -61,7 +61,7 @@ const projects = [
             telegram: "https://t.me/skyguy",
         },
         demo: "https://github.com/mrSkyGuy/aiogram_captcha",
-        image: "zaur_nurmagomedov/aiogram_captcha.jpg",
+        image: "https://raw.githubusercontent.com/ilrosch/dream-team/development/src/img/projects/zaur_nurmagomedov/aiogram_captcha.jpg",
     },
 
     {
@@ -77,7 +77,7 @@ const projects = [
             telegram: "https://t.me/skyguy",
         },
         demo: "https://github.com/mrSkyGuy/skyResume",
-        image: "zaur_nurmagomedov/skyResume.jpg",
+        image: "https://raw.githubusercontent.com/ilrosch/dream-team/development/src/img/projects/zaur_nurmagomedov/skyResume.jpg",
     },
 
     {
@@ -93,7 +93,7 @@ const projects = [
             telegram: "https://t.me/skyguy",
         },
         demo: "https://github.com/mrSkyGuy/App-for-LearningWords",
-        image: "zaur_nurmagomedov/App-for-LearningWords.jpg",
+        image: "https://raw.githubusercontent.com/ilrosch/dream-team/development/src/img/projects/zaur_nurmagomedov/App-for-LearningWords.jpg",
     },
 
     {
@@ -109,7 +109,7 @@ const projects = [
             telegram: "https://t.me/skyguy",
         },
         demo: "https://github.com/platon-p/aiogram_list_view",
-        image: "zaur_nurmagomedov/Inline-buttons-list-view.jpg",
+        image: "https://raw.githubusercontent.com/ilrosch/dream-team/development/src/img/projects/zaur_nurmagomedov/Inline-buttons-list-view.jpg",
     },
 ];
 

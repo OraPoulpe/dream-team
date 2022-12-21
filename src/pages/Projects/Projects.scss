@@ -1,6 +1,7 @@
 .projects {
   position: relative;
   width: 100%;
+  margin-bottom: 90px;
 
   &__container {
     width: 100%;
@@ -45,24 +46,20 @@
     padding: 40px;
     transition: all 0.5s;
     opacity: 1;
-
     border-radius: 20px;
     background: #fff;
+    transform: translateY(-40px);
     box-shadow: 4px 4px 10px rgb(0 0 0 / 5%), -4px -4px 10px rgb(0 0 0 / 5%);
   }
 
   &__cards {
     position: relative;
     width: 590px;
-    height: 420px;
+    height: auto;
     border-radius: 20px;
     overflow: hidden;
     z-index: 2;
     transition: all 0.7s;
-    will-change: height;
-    &:hover {
-      height: auto;
-    }
 
     &:hover .projects__shadow {
       opacity: 0;
@@ -88,7 +85,7 @@
     width: 590px;
     height: 420px;
     overflow: hidden;
-
+    border-radius: 20px;
     .image {
       width: auto;
       height: 100%;
