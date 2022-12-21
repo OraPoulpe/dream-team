@@ -1,7 +1,9 @@
-import "./index.scss";
+import { Link } from "react-router-dom";
 
+import "./index.scss";
 import birdImg from "../../img/bird.png";
 import appDevelopment from "../../img/appDevelopment.png";
+
 
 function getMinutes(milliseconds) {
   return Math.floor(milliseconds / 60000);
@@ -40,14 +42,14 @@ export default function Footer() {
         <nav className="navigation__nav">
           <ul className="nav__list">
             <li className="nav__item">
-              <a className="nav__item-link" href="#top">
+              <a className="nav__item-link" href="#home-section">
                 <span>Главная</span>
               </a>
             </li>
             <li className="nav__item">
-              <a className="nav__item-link" href="#projects">
+              <Link className="nav__item-link" to="projects">
                 <span>Проекты</span>
-              </a>
+              </Link>
             </li>
             <li className="nav__item">
               <a className="nav__item-link" href="#team">
