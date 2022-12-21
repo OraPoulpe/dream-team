@@ -55,11 +55,16 @@
   &__cards {
     position: relative;
     width: 590px;
+    max-height: 420px;
     height: auto;
     border-radius: 20px;
     overflow: hidden;
     z-index: 2;
     transition: all 0.7s;
+
+    &:hover {
+      max-height: 1400px;
+    }
 
     &:hover .projects__shadow {
       opacity: 0;
@@ -86,7 +91,7 @@
     height: 420px;
     overflow: hidden;
     border-radius: 20px;
-
+    background: #fff;
     .image {
       width: auto;
       height: 100%;
