@@ -14,9 +14,9 @@ export function HomeSection() {
               tincidunt leo ornare. Tincidunt maecenas ultricies id in cras augue. Viverra enim ullamcorper venenatis
               molestie amet purus justo mauris elit. Commodo elit amet vitae id odio id aenean dui.
             </p>
-            <a href="#teams">
+            <a href="#team">
               <button type="button" className="promo__button">
-                подробнее о нас
+                Подробнее о нас
               </button>
             </a>
           </div>
