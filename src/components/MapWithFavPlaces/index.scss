@@ -17,6 +17,7 @@
 
     @media (max-width: 650px) {
       flex-direction: column;
+      gap: 32px;
     }
   }
 
@@ -50,7 +51,7 @@
         font-size: 1.4rem;
         font-weight: 500;
         margin: 0;
-        margin-bottom: 8px;
+        margin-bottom: 12px;
       }
 
       .teammate__places {
