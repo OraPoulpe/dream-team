@@ -4,7 +4,7 @@ import "./HomeSection.scss";
 // eslint-disable-next-line import/prefer-default-export
 export function HomeSection() {
   return (
-    <section className="promo">
+    <section className="promo" id="home-section">
       <div className="container">
         <div className="promo__block">
           <div className="promo__colum">

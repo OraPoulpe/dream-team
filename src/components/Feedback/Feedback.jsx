@@ -96,7 +96,7 @@ function Feedback() {
   };
 
   return (
-    <section className={styles.feedback}>
+    <section className={styles.feedback} id="contact">
       <Titles title="Мы всегда на связи" subtitle="Принимаем сообщения 24/7" />
       <div className={styles.feedback_layout}>
         <img className={styles.svg} src={svgFeedback} alt="Изображение" />
