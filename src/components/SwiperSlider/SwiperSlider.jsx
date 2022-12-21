@@ -39,7 +39,7 @@ export default function SwiperSlider() {
             <div className="slider__wrap">
               {team !== undefined &&
                 team.map((user) => (
-                  <div className="slider__card">
+                  <div className="slider__card" key={user.id}>
                     <div className="slider__photo slider__photo--small">
                       <img src={user.photo} alt="Фото" />
                     </div>
@@ -64,7 +64,7 @@ export default function SwiperSlider() {
                 <p className="slider__vita">{user.vita}</p>
                 <div className="slider__skills">
                   {user.skills.map((skill) => (
-                    <div className="slider__skill">
+                    <div className="slider__skill" key={skill}>
                       <p>{skill}</p>
                     </div>
                   ))}
