@@ -1,8 +1,7 @@
 import development from "../../img/development.png";
 import "./HomeSection.scss";
 
-// eslint-disable-next-line import/prefer-default-export
-export function HomeSection() {
+export default function HomeSection() {
   return (
     <section className="promo" id="home-section">
       <div className="container">
