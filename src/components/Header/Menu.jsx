@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import classNames from "classnames";
+import { Link } from "react-router-dom";
 
 export default function Menu({ menuSettings }) {
   const { isMenuOpened, setIsMenuOpened } = menuSettings;
@@ -25,16 +26,19 @@ export default function Menu({ menuSettings }) {
     >
       <ul className="menu__list">
         <li className="menu__item">
-          <a href="#team">Наша команда</a>
+          <a href="#home-section" onClick={() => setIsMenuOpened(false)}>Главная</a>
         </li>
         <li className="menu__item">
-          <a href="#contact">Связаться</a>
+          <Link to="projects" onClick={() => setIsMenuOpened(false)}>Проекты</Link>
         </li>
         <li className="menu__item">
-          <a href="#fav-places">Любимые места</a>
+          <a href="#team" onClick={() => setIsMenuOpened(false)}>Наша команда</a>
         </li>
         <li className="menu__item">
-          <a href="#projects">Проекты</a>
+          <a href="#fav-places" onClick={() => setIsMenuOpened(false)}>Любимые места</a>
+        </li>
+        <li className="menu__item">
+          <a href="#contact" onClick={() => setIsMenuOpened(false)}>Связаться</a>
         </li>
       </ul>
     </div>

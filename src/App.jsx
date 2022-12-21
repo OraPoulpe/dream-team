@@ -15,17 +15,17 @@ function App() {
   return (
     <ThemeProvider>
       <LangProvider>
-        <Header />
         <main className="main">
           <BrowserRouter>
+            <Header />
             <Routes>
               <Route index element={<Home />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="*" element={<Page404 />} />
             </Routes>
+            <Footer />
           </BrowserRouter>
         </main>
-        <Footer />
       </LangProvider>
     </ThemeProvider>
   );

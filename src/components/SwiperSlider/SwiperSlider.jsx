@@ -21,7 +21,7 @@ import team from "../../mock/team";
 
 export default function SwiperSlider() {
   return (
-    <section className="team">
+    <section className="team" id="team">
       <Titles title="Наша команда" subtitle="Магистры веб-разработки" />
       <Swiper
         effect="cards"
