@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./styleFeedback.module.css";
 import svgFeedback from "./svgFeedback.svg";
 
-const Feedback = () => {
+function Feedback() {
   const token = "5833738553:AAEMCjrwc4cdRe389dVNBmFhmXuNt5XCjGI";
   const chatId = "-870490551";
   // const chatId = "997039388";
@@ -20,8 +20,8 @@ const Feedback = () => {
   */
 
   const handleSubmit = async (event) => {
-    let message = `Новое сообщение 
-                    %0AИмя: ${valueName} 
+    const message = `Новое сообщение
+                    %0AИмя: ${valueName}
                     %0AПочта: ${valueEmail}
                     %0AСообщение: ${valueText}`;
 
@@ -30,7 +30,7 @@ const Feedback = () => {
       `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&parse_mode=html&text=${message}`,
       {
         method: "GET",
-      }
+      },
     );
     setValueName("");
     setIsCorrectName(false);
@@ -110,7 +110,7 @@ const Feedback = () => {
         </legend>
 
         <div className={styles.input_layout}>
-          <label>Как вас зовут</label>
+          <label htmlFor="name">Как вас зовут</label>
           <input
             className={styles.input}
             value={valueName}
@@ -120,6 +120,7 @@ const Feedback = () => {
               isValidName(e.target.value);
               setValueName(e.target.value);
             }}
+            id="name"
           />
         </div>
 
@@ -128,7 +129,7 @@ const Feedback = () => {
         </span>
 
         <div className={styles.input_layout}>
-          <label>Ваш Email</label>
+          <label htmlFor="email">Введите почту</label>
           <input
             className={styles.input}
             value={valueEmail}
@@ -138,6 +139,7 @@ const Feedback = () => {
               isValidEmail(e.target.value);
               setValueEmail(e.target.value);
             }}
+            id="email"
           />
         </div>
 
@@ -146,7 +148,7 @@ const Feedback = () => {
         </span>
 
         <div className={styles.input_layout}>
-          <label>Ваше сообщение</label>
+          <label htmlFor="message">Введите сообщение</label>
           <textarea
             className={styles.input_textarea}
             value={valueText}
@@ -155,6 +157,7 @@ const Feedback = () => {
             onChange={(e) => {
               setValueText(e.target.value);
             }}
+            id="message"
           />
         </div>
 
@@ -178,6 +181,6 @@ const Feedback = () => {
       </form>
     </div>
   );
-};
+}
 
 export default Feedback;

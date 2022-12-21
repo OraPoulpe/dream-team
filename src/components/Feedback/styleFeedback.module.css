@@ -114,3 +114,9 @@
   visibility: hidden;
   text-align: center;
 }
+
+.input_layout {
+  height: 40px;
+  margin: 5px;
+}
+

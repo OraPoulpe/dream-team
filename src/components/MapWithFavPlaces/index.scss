@@ -1,54 +1,54 @@
 .favorite-places {
-    display: flex;
-    justify-content: space-between;
-    margin: auto;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
 
-    &__data {
+  &__data {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    .data__teammate {
+      .teammate__name {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin: 0;
+      }
+
+      .teammate__places {
         list-style-type: none;
         padding: 0;
         margin: 0;
 
-        .data__teammate {
-            .teammate__name {
-                font-size: 1.5rem;
-                font-weight: 500;
-                margin: 0;
+        .places__place {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+
+          .place__map-marker {
+            width: 30px;
+            height: 30px;
+          }
+
+          .place__address {
+            transition: 0.3s;
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #777;
+
+            &.active {
+              color: #222;
             }
-
-            .teammate__places {
-                list-style-type: none;
-                padding: 0;
-                margin: 0;
-
-                .places__place {
-                    display: flex;
-                    align-items: center;
-                    cursor: pointer;
-                    
-                    .place__map-marker {
-                        width: 30px;
-                        height: 30px;
-                    }
-                    
-                    .place__address {
-                        transition: .3s;
-                        font-size: 1.2rem;
-                        font-weight: 400;
-                        color: #777;
-
-                        &.active {
-                            color: #222;
-                        }
-                    }
-                }
-            }
+          }
         }
+      }
     }
+  }
 
-    &__map {
-        width: 50vw;
-        height: 50vh;
-        border-radius: 20px;
-        overflow: hidden;
-    }
+  &__map {
+    width: 50vw;
+    height: 50vh;
+    border-radius: 20px;
+    overflow: hidden;
+  }
 }
