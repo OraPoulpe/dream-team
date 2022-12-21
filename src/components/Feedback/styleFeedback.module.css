@@ -1,3 +1,9 @@
+.feedback {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
 .feedback_layout {
   display: flex;
   justify-content: center;
@@ -14,8 +20,10 @@
 @media (max-width: 500px) {
   .input_layout {
     flex-direction: column;
+
     /* align-items: left; */
     justify-content: left;
+
     /* max-height: 100px; */
   }
 }
@@ -78,7 +86,7 @@
   border: 1px solid #d2d3d9;
   border-radius: 12px;
   padding: 10px;
-  resize: none
+  resize: none;
 }
 
 .input_checkbox {
@@ -89,7 +97,7 @@
   margin-right: 15px;
 }
 
-.text_ladel{
+.text_ladel {
   font-family: "Open Sans", serif;
   font-weight: 600;
   font-size: 14px;
