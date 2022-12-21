@@ -20,8 +20,8 @@ import team from "../../mock/team";
 
 export default function SwiperSlider() {
   return (
-    <div>
-      <Titles title="Наша команда" subtitle="Здесь будет текст" />
+    <section className="team">
+      <Titles title="Наша команда" subtitle="Магистры веб-разработки" />
       <Swiper
         effect="cards"
         grabCursor
@@ -49,6 +49,7 @@ export default function SwiperSlider() {
             </div>
           </div>
         </SwiperSlide>
+
         {team !== undefined &&
           team.map((user) => (
             <SwiperSlide key={user.id} className="slider__wrapper">
@@ -84,6 +85,6 @@ export default function SwiperSlider() {
             </SwiperSlide>
           ))}
       </Swiper>
-    </div>
+    </section>
   );
 }
