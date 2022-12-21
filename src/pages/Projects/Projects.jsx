@@ -1,6 +1,5 @@
-import github from "../../components/SwiperSlider/icons/github.svg";
-import telegram from "../../components/SwiperSlider/icons/telegram.svg";
-import photo from "./project.png";
+import github from "../../img/icons/github-white.svg";
+import telegram from "../../img/icons/telegram-white.svg";
 import Titles from "../../components/Titles/Titles";
 import projects from "../../mock/projects";
 import "./Projects.scss";
@@ -17,7 +16,7 @@ export default function Projects() {
           projects.map((project) => (
             <div className="projects__cards">
               <div className="projects__card">
-                <img src={photo} alt="project" className="image" />
+                <img src={project.image} alt="project" className="image" />
                 <div className="projects__shadow" />
 
                 <div className="projects__header">

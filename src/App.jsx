@@ -16,7 +16,7 @@ function App() {
     <ThemeProvider>
       <LangProvider>
         <Header />
-        <main className="container">
+        <main className="main">
           <BrowserRouter>
             <Routes>
               <Route index element={<Home />} />

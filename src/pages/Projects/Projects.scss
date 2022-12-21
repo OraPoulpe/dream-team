@@ -1,6 +1,7 @@
 .projects {
   position: relative;
   width: 100%;
+  margin-bottom: 90px;
 
   &__container {
     width: 100%;
@@ -39,16 +40,15 @@
   }
 
   &__hover {
-    position: absolute;
     z-index: 1;
     width: 100%;
     height: auto;
     padding: 40px;
     transition: all 0.5s;
-    opacity: 0;
-    transform: translate(0, -100%);
+    opacity: 1;
     border-radius: 20px;
     background: #fff;
+    transform: translateY(-40px);
     box-shadow: 4px 4px 10px rgb(0 0 0 / 5%), -4px -4px 10px rgb(0 0 0 / 5%);
   }
 
@@ -59,6 +59,7 @@
     border-radius: 20px;
     overflow: hidden;
     z-index: 2;
+    transition: all 0.7s;
 
     &:hover .projects__shadow {
       opacity: 0;
@@ -70,12 +71,6 @@
 
     &:hover .projects__header {
       opacity: 0;
-    }
-
-    &:hover .projects__hover {
-      position: relative;
-      opacity: 1;
-      transform: translate(0, -40px);
     }
 
     @media (max-width: 651px) {
@@ -90,9 +85,10 @@
     width: 590px;
     height: 420px;
     overflow: hidden;
+    border-radius: 20px;
 
     .image {
-      width: 100%;
+      width: auto;
       height: 100%;
     }
 
