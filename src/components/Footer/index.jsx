@@ -41,22 +41,22 @@ export default function Footer() {
           <ul className="nav__list">
             <li className="nav__item">
               <a className="nav__item-link" href="#top">
-                Главная
+                <span>Главная</span>
               </a>
             </li>
             <li className="nav__item">
               <a className="nav__item-link" href="#projects">
-                Проекты
+                <span>Проекты</span>
               </a>
             </li>
             <li className="nav__item">
               <a className="nav__item-link" href="#team">
-                Команда
+                <span>Команда</span>
               </a>
             </li>
             <li className="nav__item">
               <a className="nav__item-link" href="#fav-places">
-                Любимые места
+                <span>Любимые места</span>
               </a>
             </li>
           </ul>

@@ -2,16 +2,38 @@
   box-shadow: 0 -4px 10px rgb(0 0 0 / 10%);
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  gap: 8px;
+  padding-top: 24px;
 
   &__about {
     display: flex;
-    height: 100%;
+    gap: 25px;
+
+    .about__bird-img {
+      align-self: flex-start;
+
+      @media (max-width: 1000px) {
+        width: 150px;
+      }
+
+      @media (max-width: 900px) {
+        border-left: 1px solid #222;
+      }
+
+      @media (max-width: 730px) {
+        display: none;
+      }
+    }
 
     .about__content {
       display: flex;
       flex-direction: column;
       justify-content: center;
+
+      @media (max-width: 1300px) {
+        max-width: 300px;
+      }
 
       .about__title {
         font-size: 1.5rem;
@@ -43,10 +65,14 @@
         border-radius: 5px;
         align-self: flex-start;
         padding: 1rem 3rem;
+        margin-bottom: 2rem;
+
+        @media (max-width: 700px) {
+          align-self: center;
+        }
       }
 
       .about__copyright {
-        margin-top: auto;
         display: flex;
         flex-direction: column;
         font-size: 1.2rem;
@@ -72,6 +98,7 @@
       font-weight: 600;
       font-size: 1.5rem;
       color: #22242a;
+      text-align: center;
     }
 
     .nav__list {
@@ -85,12 +112,14 @@
         color: #636363;
         border-radius: 7px;
         transition: 0.25s;
-        padding: 1rem 0;
+        text-align: center;
 
         &-link {
+          display: block;
           padding: 1rem 3rem;
           color: inherit;
           font-size: 1.2rem;
+          text-align: center;
         }
 
         &:hover {
@@ -99,5 +128,38 @@
         }
       }
     }
+  }
+
+  &__illustration {
+    object-fit: cover;
+    align-self: flex-end;
+
+    @media (max-width: 1370px) {
+      width: 400px;
+      height: 300px;
+    }
+
+    @media (max-width: 1075px) {
+      width: 300px;
+      height: 200px;
+      align-self: flex-start;
+      border-bottom: 1px solid #222;
+    }
+
+    @media (max-width: 900px) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 900px) {
+    justify-content: space-evenly;
+  }
+
+  @media (max-width: 570px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 24px;
+    text-align: center;
   }
 }

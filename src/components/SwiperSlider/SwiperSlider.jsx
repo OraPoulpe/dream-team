@@ -16,12 +16,13 @@ import "./SwiperSlider.scss";
 import telegram from "../../img/icons/telegram.svg";
 import github from "../../img/icons/github.svg";
 import Titles from "../Titles/Titles";
-import slider from "../../mock/slider";
+import team from "../../mock/team";
+
 
 export default function SwiperSlider() {
   return (
-    <div id="teams">
-      <Titles title="Наша команда" subtitle="Здесь будет текст" />
+    <section className="team">
+      <Titles title="Наша команда" subtitle="Магистры веб-разработки" />
       <Swiper
         effect="cards"
         grabCursor
@@ -36,8 +37,8 @@ export default function SwiperSlider() {
               <h3>Давайте знакомиться!</h3>
             </div>
             <div className="slider__wrap">
-              {slider !== undefined &&
-                slider.map((user) => (
+              {team !== undefined &&
+                team.map((user) => (
                   <div className="slider__card">
                     <div className="slider__photo slider__photo--small">
                       <img src={user.photo} alt="Фото" />
@@ -49,8 +50,9 @@ export default function SwiperSlider() {
             </div>
           </div>
         </SwiperSlide>
-        {slider !== undefined &&
-          slider.map((user) => (
+
+        {team !== undefined &&
+          team.map((user) => (
             <SwiperSlide key={user.id} className="slider__wrapper">
               <div className="slider__content">
                 <div className="slider__block" />
@@ -84,6 +86,6 @@ export default function SwiperSlider() {
             </SwiperSlide>
           ))}
       </Swiper>
-    </div>
+    </section>
   );
 }
