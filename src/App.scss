@@ -1,22 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap");
 
 .container {
-  max-width: 1440px;
+  width: 1200px;
   margin: 0 auto;
+  @media (max-width: 1200px) {
+    width: 100%;
+    padding: 0 20px;
+  }
 }
 
-main.container {
-  display: flex;
-  flex-direction: column;
-  gap: 64px;
-  margin-bottom: 64px;
-  min-height: 85vh; // Чтобы футер был всегда внизу
-}
-
-header > .container,
-main.container,
-footer.container {
-  @media (max-width: 1439px) {
+.container-slider {
+  width: 1440px;
+  margin: 0 auto;
+  @media (max-width: 1440px) {
     width: 100%;
     padding: 0 20px;
   }
