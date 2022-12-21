@@ -44,7 +44,7 @@ const data = [
       telegram: "https://t.me/krylov_dev",
     },
     photo:
-      "https://raw.githubusercontent.com/ilrosch/dream-team/development/src/components/SwiperSliderphoto_vladimir_krylov.jpg",
+      "https://raw.githubusercontent.com/ilrosch/dream-team/development/src/components/SwiperSlider/photo_vladimir_krylov.jpg",
   },
 
   {
