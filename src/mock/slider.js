@@ -32,6 +32,7 @@ const slider = [
         id: "2",
         name: "Заур Нурмагомедов",
         profession: "Frontend developer",
+        // eslint-disable-next-line max-len
         vita: "Frontend-разработчик, чутка шарящий в backend. Фанат японской манги. Очень хочет прописать sudo apt-get update.",
         skills: [
             "HTML (HTML5)",
@@ -53,6 +54,7 @@ const slider = [
             telegram: "https://t.me/skyguy",
         },
         photo:
+            // eslint-disable-next-line max-len
             "https://raw.githubusercontent.com/ilrosch/dream-team/development/src/img/slider/photo_nurmagomedov_zaur.jpg",
     },
 
@@ -60,6 +62,7 @@ const slider = [
         id: "3",
         name: "Илья Росчихмаров",
         profession: "Frontend developer, Web-designer",
+        // eslint-disable-next-line max-len
         vita: "Если сказать кратко, то я «самоучка». Знания в области веб-программирования черпал из различных книг, статей и курсов на образовательных площадках Beonmax и Freecodecamp. Закончил обучение более 2-х лет назад, но до сих пор продолжаю совершенствовать свои навыки и изучаю новые технологии. Также имею опыт в разработке веб-дизайна.",
         skills: ["HTML (HTML5)", "CSS (CSS3)", "Sass/Scss", "JavaScript", "React", "BEM", "Gulp", "Figma", "Photoshop"],
         socials: {
@@ -68,6 +71,7 @@ const slider = [
             telegram: "https://t.me/ilrosch",
         },
         photo:
+            // eslint-disable-next-line max-len
             "https://raw.githubusercontent.com/ilrosch/dream-team/development/src/img/slider/photo_Ilya_roschimarov.jpg",
     },
 
