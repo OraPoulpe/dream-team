@@ -1,10 +1,17 @@
+import { useEffect } from "react";
+
 import github from "../../img/icons/github-white.svg";
 import telegram from "../../img/icons/telegram-white.svg";
 import Titles from "../../components/Titles/Titles";
 import projects from "../../mock/projects";
 import "./Projects.scss";
 
+
 export default function Projects() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+
   return (
     <main className="projects">
       <Titles
