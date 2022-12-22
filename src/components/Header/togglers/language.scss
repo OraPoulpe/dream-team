@@ -1,7 +1,8 @@
 .tools__toggle-language {
   $size: 2rem;
-  $icon-fill: hsl(210deg 10% 30%);
-  $icon-fill-hover: hsl(210deg 10% 10%);
+
+  --icon-fill: hsl(210deg 10% 30%);
+  --icon-fill-hover: hsl(210deg 10% 10%);
 
   background: none;
   border: none;
@@ -20,12 +21,17 @@
     block-size: 100%;
     stroke-linecap: round;
     transition: 0.25s;
-    fill: $icon-fill;
+    fill: var(--icon-fill);
   }
 
   &:hover {
     & > svg {
-      fill: $icon-fill-hover;
+      fill: var(--icon-fill-hover);
     }
+  }
+
+  &[aria-label="dark"] {
+    --icon-fill: hsl(210deg 10% 70%);
+    --icon-fill-hover: hsl(210deg 15% 90%);
   }
 }

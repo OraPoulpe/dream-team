@@ -2,9 +2,10 @@
 /* eslint-disable import/no-unresolved */
 
 // Import Swiper React components
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Scrollbar, A11y, EffectCards } from "swiper";
+import classNames from "classnames";
 
 // Import Swiper styles
 import "swiper/css";
@@ -12,14 +13,16 @@ import "swiper/css/effect-cards";
 import "swiper/css/navigation";
 import "swiper/css/scrollbar";
 
-import "./SwiperSlider.scss";
+import { ThemeContext } from "../../context/ThemeProvider";
 import telegram from "../../img/icons/telegram.svg";
 import github from "../../img/icons/github.svg";
 import Titles from "../Titles/Titles";
 import team from "../../mock/team";
 import Loader from "../Loader/Loader";
+import "./SwiperSlider.scss";
 
 export default function SwiperSlider() {
+  const { theme } = useContext(ThemeContext);
   const [teams, setData] = useState([]);
   useEffect(() => {
     setTimeout(() => {
@@ -28,7 +31,7 @@ export default function SwiperSlider() {
   }, []);
 
   return (
-    <section className="team" id="team">
+    <section className={classNames("team", { dark: theme === "dark" })} id="team">
       <Titles title="Наша команда" subtitle="Магистры веб-разработки" />
       <Swiper
         effect="cards"
