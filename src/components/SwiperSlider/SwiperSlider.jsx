@@ -2,7 +2,7 @@
 /* eslint-disable import/no-unresolved */
 
 // Import Swiper React components
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Scrollbar, A11y, EffectCards } from "swiper";
 
@@ -17,9 +17,16 @@ import telegram from "../../img/icons/telegram.svg";
 import github from "../../img/icons/github.svg";
 import Titles from "../Titles/Titles";
 import team from "../../mock/team";
-
+import Loader from "../Loader/Loader";
 
 export default function SwiperSlider() {
+  const [teams, setData] = useState([]);
+  useEffect(() => {
+    setTimeout(() => {
+      setData(team);
+    }, 1000);
+  }, []);
+
   return (
     <section className="team" id="team">
       <Titles title="Наша команда" subtitle="Магистры веб-разработки" />
@@ -37,8 +44,11 @@ export default function SwiperSlider() {
               <h3>Давайте знакомиться!</h3>
             </div>
             <div className="slider__wrap">
-              {team !== undefined &&
-                team.map((user) => (
+              {teams.length === 0 ? (
+                <Loader />
+              ) : (
+                teams !== undefined &&
+                teams.map((user) => (
                   <div className="slider__card" key={user.id}>
                     <div className="slider__photo slider__photo--small">
                       <img src={user.photo} alt="Фото" />
@@ -46,13 +56,14 @@ export default function SwiperSlider() {
                     <h2 className="slider__title slider__title--small">{user.name}</h2>
                     <h3 className="slider__subtitle slider__subtitle--small">{user.profession}</h3>
                   </div>
-                ))}
+                ))
+              )}
             </div>
           </div>
         </SwiperSlide>
 
-        {team !== undefined &&
-          team.map((user) => (
+        {teams !== undefined &&
+          teams.map((user) => (
             <SwiperSlide key={user.id} className="slider__wrapper">
               <div className="slider__content">
                 <div className="slider__block" />

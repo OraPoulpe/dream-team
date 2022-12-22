@@ -1,16 +1,20 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import github from "../../img/icons/github-white.svg";
 import telegram from "../../img/icons/telegram-white.svg";
 import Titles from "../../components/Titles/Titles";
+import Loader from "../../components/Loader/Loader";
 import projects from "../../mock/projects";
 import "./Projects.scss";
 
-
 export default function Projects() {
+  const [projected, setData] = useState([]);
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [])
+    setTimeout(() => {
+      setData(projects);
+    }, 1000);
+  }, []);
 
   return (
     <main className="projects">
@@ -19,8 +23,11 @@ export default function Projects() {
         subtitle="Lorem ipsum dolor sit amet consectetur. Porta cursus qu+is blandit orci leo."
       />
       <div className="projects__container">
-        {projects !== undefined &&
-          projects.map((project) => (
+        {projected.length === 0 ? (
+          <Loader />
+        ) : (
+          projected !== undefined &&
+          projected.map((project) => (
             <div className="projects__cards">
               <div className="projects__card">
                 <img src={project.image} alt="project" className="image" />
@@ -76,7 +83,8 @@ export default function Projects() {
                 </div>
               </div>
             </div>
-          ))}
+          ))
+        )}
       </div>
     </main>
   );
