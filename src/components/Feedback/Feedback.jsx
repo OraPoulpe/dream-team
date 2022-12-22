@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import classNames from "classnames";
 
+import { ThemeContext } from "../../context/ThemeProvider";
 import "./index.scss";
 import svgFeedback from "./svgFeedback.svg";
 import Titles from "../Titles/Titles";
 
 function Feedback() {
+  const { theme } = useContext(ThemeContext);
   const token = "5833738553:AAEMCjrwc4cdRe389dVNBmFhmXuNt5XCjGI";
   const chatId = "997039388";
 
@@ -77,7 +79,7 @@ function Feedback() {
   };
 
   return (
-    <section className="feedback">
+    <section className={classNames("feedback", { dark: theme === "dark" })}>
       <Titles title="Мы всегда на связи" subtitle="Ваши предложения и отзывы" />
       <div className="feedback__layout">
         <img className="svg" src={svgFeedback} alt="Изображение" />
@@ -106,7 +108,7 @@ function Feedback() {
           </span>
 
           <div className="form__input">
-            <label className="input__ladel" htmlFor="email">
+            <label className="input__label" htmlFor="email">
               Введите почту
             </label>
             <input

@@ -1,9 +1,21 @@
+:root {
+  --feedback-form-background-color: #fff;
+  --feedback-form-text-color: #494949;
+  --feedback-form-field-background-color: #fff;
+}
+
 .feedback {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 40px;
+
+  &.dark {
+    --feedback-form-background-color: #0b0c10;
+    --feedback-form-text-color: #b4b4b4;
+    --feedback-form-field-background-color: transparent;
+  }
 
   &__layout {
     margin-bottom: 60px;
@@ -23,7 +35,7 @@
   &__form {
     max-width: 460px;
     border-radius: 20px;
-    background-color: white;
+    background-color: var(--feedback-form-background-color);
     padding: 30px;
     display: flex;
     flex-direction: column;
@@ -37,7 +49,7 @@
       line-height: 40px;
       text-align: center;
       margin-bottom: 15px;
-      color: #494949;
+      color: var(--feedback-form-text-color);
 
       @media (max-width: 500px) {
         font-size: 15px;
@@ -55,23 +67,28 @@
         width: 250px;
         height: 40px;
         border: 1px solid #d2d3d9;
+        background: var(--feedback-form-field-background-color);
         border-radius: 12px;
         padding-left: 10px;
+        color: var(--feedback-form-text-color);
       }
 
       .input__textarea {
         width: 250px;
         height: 100px;
         border: 1px solid #d2d3d9;
+        background: var(--feedback-form-field-background-color);
         border-radius: 12px;
         padding: 10px;
         resize: none;
+        color: var(--feedback-form-text-color);
       }
 
       .input__checkbox {
         height: 30px;
         width: 30px;
-        border: 1px solid #4b4c52;
+        border: 1px solid #d2d3d9;
+        background: var(--feedback-form-field-background-color);
         border-radius: 12px;
         margin-right: 15px;
       }
@@ -80,7 +97,7 @@
         font-family: "Open Sans", serif;
         font-weight: 600;
         font-size: 14px;
-        color: #494949;
+        color: var(--feedback-form-text-color);
       }
 
       &.checkbox {
