@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { Map, Placemark } from "@pbe/react-yandex-maps";
 import classNames from "classnames";
+import { useTranslation } from "react-i18next";
 
 import { ThemeContext } from "../../context/ThemeProvider";
 import Titles from "../Titles/Titles";
@@ -21,6 +22,7 @@ function getPlaceById(id) {
 export default function MapWithFavPlaces() {
   const [activeMapMarker, setActiveMapMarker] = useState(null);
   const { theme } = useContext(ThemeContext);
+  const { t } = useTranslation();
 
   function handleClickOnMapMarker(id) {
     setActiveMapMarker(id);
@@ -28,13 +30,13 @@ export default function MapWithFavPlaces() {
 
   return (
     <section className={classNames("favorite-places", { dark: theme === "dark" })} id="fav-places">
-      <Titles title="Наши любимые места" subtitle="Рекомендуем посетить" />
+      <Titles title={t("Наши любимые места")} subtitle={t("Рекомендуем посетить")} />
       <div className="container">
         <ul className="favorite-places__data">
           {team.map((teammate) => (
             <li key={teammate.id} className="data__teammate">
               <h3 className="teammate__name">
-                {teammate.name} {teammate.surname}
+                {t(`${teammate.name}`)}
               </h3>
               <ul className="teammate__places">
                 {getPlacesByTeammateId(teammate.id).map((place) => (
@@ -49,7 +51,7 @@ export default function MapWithFavPlaces() {
                         active: place.id === activeMapMarker,
                       })}
                     >
-                      {place.address}
+                      {t(place.address)}
                     </span>
                   </li>
                 ))}
