@@ -1,18 +1,47 @@
+:root {
+  --team-background-color: #fff;
+  --team-title-color: #22242a;
+  --team-vita-color: #434343;
+  --team-skill-background-color: #d9d9d9;
+  --team-skill-color: rgb(99 99 99 / 70%);
+  --team-email-color: #5c369a;
+  --team-onhover-opacity: 0.7;
+  --team-swiperscrollbar-color: #dcdcdc;
+  --team-swiperdrag-background-color: #636363;
+  --team-swiperbtn-background-color: #afafaf;
+  --team-swiperbtn-color: #efeff2;
+}
+
 .team {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 40px;
+
+  &.dark {
+    --team-background-color: #0b0c10;
+    --team-title-color: #b4b4b4;
+    --team-vita-color: #858585;
+    --team-skill-background-color: #22242a;
+    --team-skill-color: #858585;
+    --team-email-color: #7745c8;
+    --team-onhover-opacity: 0.8;
+    --team-swiperscrollbar-color: #000;
+    --team-swiperdrag-background-color: #3d1d72;
+    --team-swiperbtn-background-color: #434343;
+    --team-swiperbtn-color: #b4b4b4;
+  }
 }
 
 .slider__content {
+  transition: 0.25s;
   width: 1024px;
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 0 32px;
   min-height: 550px;
-  background: #fff;
+  background: var(--team-background-color);
   box-shadow: 4px 4px 10px rgb(0 0 0 / 10%), -4px -4px 10px rgb(0 0 0 / 10%);
   border-radius: 20px;
 
@@ -300,7 +329,7 @@
   font-size: 25px;
   line-height: 22px;
   letter-spacing: 0.03em;
-  color: #22242a;
+  color: var(--team-title-color);
   text-align: center;
 }
 
@@ -329,7 +358,7 @@
   font-size: 16px;
   line-height: 25px;
   letter-spacing: 0.02em;
-  color: #434343;
+  color: var(--team-vita-color);
   margin-bottom: 22px;
 
   @media (max-width: 600px) {
@@ -351,7 +380,7 @@
 
 .slider__skill {
   padding: 10px 20px;
-  background: #d9d9d9;
+  background: var(--team-skill-background-color);
   border-radius: 10px;
 
   @media (max-width: 550px) {
@@ -363,7 +392,7 @@
   font-weight: 400;
   font-size: 13px;
   line-height: 20px;
-  color: rgb(99 99 99 / 70%);
+  color: var(--team-skill-color);
 }
 
 .slider__contacts {
@@ -387,11 +416,11 @@
   font-size: 16px;
   line-height: 22px;
   letter-spacing: 0.02em;
-  color: #5c369a;
+  color: var(--team-email-color);
 }
 
 .slider__contacts a:hover {
-  opacity: 0.7;
+  opacity: var(--team-onhover-opacity);
 }
 
 .slider__contacts a img {
@@ -408,7 +437,7 @@
   align-items: center;
   width: 500px;
   height: 2px;
-  background: #dcdcdc;
+  background: var(--team-swiperscrollbar-color);
   border-radius: 10px;
   margin-top: 40px;
 }
@@ -416,7 +445,7 @@
 .swiper-scrollbar-drag {
   width: 72px;
   height: 5px;
-  background: #636363;
+  background: var(--team-swiperdrag-background-color);
   border-radius: 10px;
 }
 
@@ -425,7 +454,7 @@
   transition: all 0.3s;
   width: 40px;
   height: 160px;
-  background: #afafaf;
+  background: var(--team-swiperbtn-background-color);
   border-radius: 7px;
 
   @media (max-width: 1060px) {
@@ -435,11 +464,11 @@
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  background: #636363;
+  opacity: var(--team-onhover-opacity);
 }
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
   font-size: 25px;
-  color: #efeff2;
+  color: var(--team-swiperbtn-color);
 }
