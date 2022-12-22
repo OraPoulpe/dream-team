@@ -9,7 +9,7 @@ import HomeSection from "../../components/HomeSection/HomeSection";
 export default function Home() {
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [])
+  }, []);
 
   return (
     <>
@@ -20,7 +20,7 @@ export default function Home() {
           <MapWithFavPlaces />
         </YMaps>
       </div>
-      
+
       <Feedback />
     </>
   );
