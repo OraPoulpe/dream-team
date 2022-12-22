@@ -23,9 +23,9 @@ export default function Footer() {
             Lorem ipsum dolor sit amet consectetur. Risus nunc sit tristique fringilla. Sit sagittis interdum bibendum
             odio elit quis eu proin. Vitae gravida pellentesque interdum lobortis habitasse at nunc.
           </p>
-          <button className="about__contact-btn" type="button">
+          <a className="about__contact-btn" href="#contact">
             Связаться
-          </button>
+          </a>
           <p className="about__copyright">
             <span className="copyright__info">&copy; 2022 DreamTeam</span>
             <span className="copyright__plea">
