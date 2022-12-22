@@ -1,5 +1,5 @@
-import { useEffect, useState, useContext, classNames } from "react";
-
+import { useEffect, useState, useContext } from "react";
+import classNames from "classnames";
 import { ThemeContext } from "../../context/ThemeProvider";
 import github from "../../img/icons/github-white.svg";
 import telegram from "../../img/icons/telegram-white.svg";
