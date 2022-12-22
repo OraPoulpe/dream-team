@@ -26,7 +26,6 @@ export default function Projects() {
     <section className={classNames("projects", { dark: theme === "dark" })}>
       <Titles
         title={t("Наши проекты")}
-        subtitle="Lorem ipsum dolor sit amet consectetur. Porta cursus qu+is blandit orci leo."
       />
       <div className="projects__container">
         {projected.length === 0 ? (
