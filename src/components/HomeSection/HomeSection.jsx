@@ -1,9 +1,15 @@
+import { useContext } from "react";
+import classNames from "classnames";
+
+import { ThemeContext } from "../../context/ThemeProvider";
 import development from "../../img/development.png";
 import "./HomeSection.scss";
 
 export default function HomeSection() {
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <section className="promo" id="home-section">
+    <section className={classNames("promo", { dark: theme === "dark" })} id="home-section">
       <div className="container">
         <div className="promo__block">
           <div className="promo__colum">
