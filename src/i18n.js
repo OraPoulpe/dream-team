@@ -88,7 +88,8 @@ i18n.use(LanguageDetector)
                         "Desktop application for learning new words as Russian and foreign. There are 4 courses to choose from: Russian - medical, English - slang, Spanish - base, own (the list will be expanded). You can choose several of them for study. In the future, it is planned to rewrite in a normal language and expand the possibilities. Detailed instructions are given in the readme file of the repository.",
                     "Реализация пагинации контента через инлайн-кнопки в боте. Выполнялся совместно с другом в его репозитории":
                         "Implementation of content pagination through inline buttons in the bot. Was done together with a friend in his repository.",
-                },
+                    "Мы ученики старших классов. Мы живем в разных уголках России, но всех нас объединяет любовь к программированию и Frontend-разработке": "We are high school students. We live in different parts of Russia, but we are all united by a love of programming and Frontend development"
+                    },
             },
             ru: {
                 translation: {
@@ -163,7 +164,8 @@ i18n.use(LanguageDetector)
                         "Десктопное приложение для изучения новых слов как русских, так и иностранных. На выбор имеется 4 курса: русский -медицинский, английский -сленг, испанский -база, собственный (список будет расширяться). Их можно выбрать несколько штук на изучение. В дальнейшем планируется переписать на нормальный ЯП и расширить возможности. Подробнейшая инструкция указана в ридми файле репозитория.",
                     "Реализация пагинации контента через инлайн-кнопки в боте. Выполнялся совместно с другом в его репозитории":
                         "Реализация пагинации контента через инлайн-кнопки в боте. Выполнялся совместно с другом в его репозитории",
-                },
+                    "Мы ученики старших классов. Мы живем в разных уголках России, но всех нас объединяет любовь к программированию и Frontend-разработке": "Мы ученики старших классов. Мы живем в разных уголках России, но всех нас объединяет любовь к программированию и Frontend-разработке",
+                    },
             },
         },
     });

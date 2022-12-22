@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import classNames from "classnames";
@@ -28,8 +29,7 @@ export default function Footer() {
             {t("Отсчет с момента запуска проекта")}: {getMinutes(new Date() - new Date(2022, 11, 7, 17, 21))} {t("мин")}
           </p>
           <p className="about__text">
-          Мы ученики старших классов. Мы живем в разных уголках России, но всех нас объединяет любовь к
-              программированию и Frontend-разработке
+            {t("Мы ученики старших классов. Мы живем в разных уголках России, но всех нас объединяет любовь к программированию и Frontend-разработке")}
           </p>
           <a className="about__contact-btn" href="#contact">
             {t("Связаться")}
