@@ -1,9 +1,10 @@
-import { useState, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Map, Placemark } from "@pbe/react-yandex-maps";
 import classNames from "classnames";
 
 import { ThemeContext } from "../../context/ThemeProvider";
 import Titles from "../Titles/Titles";
+import Loader from "../Loader/Loader";
 import favPlaces from "../../mock/favPlaces";
 import team from "../../mock/team";
 import mapMarkerInactiveImg from "../../img/mapMarkerInactive.svg";
@@ -26,36 +27,54 @@ export default function MapWithFavPlaces() {
     setActiveMapMarker(id);
   }
 
+  const [teams, setData] = useState([]);
+  useEffect(() => {
+    setTimeout(() => {
+      setData(team);
+    }, 1000);
+  }, []);
+
+  const [favPlace, setFavPlaces] = useState([]);
+  useEffect(() => {
+    setTimeout(() => {
+      setFavPlaces(favPlaces);
+    }, 1000);
+  }, []);
+
   return (
     <section className={classNames("favorite-places", { dark: theme === "dark" })} id="fav-places">
       <Titles title="Наши любимые места" subtitle="Рекомендуем посетить" />
       <div className="container">
         <ul className="favorite-places__data">
-          {team.map((teammate) => (
-            <li key={teammate.id} className="data__teammate">
-              <h3 className="teammate__name">
-                {teammate.name} {teammate.surname}
-              </h3>
-              <ul className="teammate__places">
-                {getPlacesByTeammateId(teammate.id).map((place) => (
-                  <li key={place.id} className="places__place" onClick={() => handleClickOnMapMarker(place.id)}>
-                    {place.id === activeMapMarker ? (
-                      <img src={mapMarkerActiveImg} alt="active map marker" className="place__map-marker" />
-                    ) : (
-                      <img src={mapMarkerInactiveImg} alt="inactive map marker" className="place__map-marker" />
-                    )}
-                    <span
-                      className={classNames("place__address", {
-                        active: place.id === activeMapMarker,
-                      })}
-                    >
-                      {place.address}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
+          {teams.length === 0 ? (
+            <Loader />
+          ) : (
+            teams.map((teammate) => (
+              <li key={teammate.id} className="data__teammate">
+                <h3 className="teammate__name">
+                  {teammate.name} {teammate.surname}
+                </h3>
+                <ul className="teammate__places">
+                  {getPlacesByTeammateId(teammate.id).map((place) => (
+                    <li key={place.id} className="places__place" onClick={() => handleClickOnMapMarker(place.id)}>
+                      {place.id === activeMapMarker ? (
+                        <img src={mapMarkerActiveImg} alt="active map marker" className="place__map-marker" />
+                      ) : (
+                        <img src={mapMarkerInactiveImg} alt="inactive map marker" className="place__map-marker" />
+                      )}
+                      <span
+                        className={classNames("place__address", {
+                          active: place.id === activeMapMarker,
+                        })}
+                      >
+                        {place.address}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))
+          )}
         </ul>
 
         <Map
@@ -71,18 +90,22 @@ export default function MapWithFavPlaces() {
             type: "yandex#satellite",
           }}
         >
-          {favPlaces.map((place) => (
-            <Placemark
-              key={place.id}
-              geometry={[place.lat, place.lon]}
-              options={{
-                iconLayout: "default#image",
-                iconImageHref: place.id === activeMapMarker ? mapMarkerActiveImg : mapMarkerInactiveImg,
-                iconImageSize: [20, 20],
-              }}
-              onCLick={() => handleClickOnMapMarker(place.id)}
-            />
-          ))}
+          {favPlace.length === 0 ? (
+            <Loader />
+          ) : (
+            favPlace.map((place) => (
+              <Placemark
+                key={place.id}
+                geometry={[place.lat, place.lon]}
+                options={{
+                  iconLayout: "default#image",
+                  iconImageHref: place.id === activeMapMarker ? mapMarkerActiveImg : mapMarkerInactiveImg,
+                  iconImageSize: [20, 20],
+                }}
+                onCLick={() => handleClickOnMapMarker(place.id)}
+              />
+            ))
+          )}
         </Map>
       </div>
     </section>
