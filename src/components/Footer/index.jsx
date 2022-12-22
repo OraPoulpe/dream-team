@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import classNames from "classnames";
