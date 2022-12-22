@@ -1,8 +1,11 @@
 import { useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import classNames from "classnames";
-import { Link } from "react-router-dom";
 
 export default function Menu({ menuSettings }) {
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+
   const { isMenuOpened, setIsMenuOpened } = menuSettings;
 
   // При клике вне меню, меню закрывается
@@ -21,24 +24,49 @@ export default function Menu({ menuSettings }) {
   });
 
   return (
-    <div
-      className={classNames("header__menu", { open: isMenuOpened })}
-    >
+    <div className={classNames("header__menu", { open: isMenuOpened })}>
       <ul className="menu__list">
         <li className="menu__item">
-          <a href="#home-section" onClick={() => setIsMenuOpened(false)}>Главная</a>
+          {/* <a href="#home-section" onClick={() => setIsMenuOpened(false)}>Главная</a> */}
+          {pathname === "/" ? <a href="#home-section">Главная</a> : <Link to="/">Главная</Link>}
         </li>
         <li className="menu__item">
-          <Link to="projects" onClick={() => setIsMenuOpened(false)}>Проекты</Link>
+          <Link to="projects" onClick={() => setIsMenuOpened(false)}>
+            Проекты
+          </Link>
         </li>
         <li className="menu__item">
-          <a href="#team" onClick={() => setIsMenuOpened(false)}>Наша команда</a>
+          <a
+            href="#team"
+            onClick={() => {
+              if (pathname === "/projects") navigate("/#team");
+              setIsMenuOpened(false);
+            }}
+          >
+            Наша команда
+          </a>
         </li>
         <li className="menu__item">
-          <a href="#fav-places" onClick={() => setIsMenuOpened(false)}>Любимые места</a>
+          <a
+            href="#fav-places"
+            onClick={() => {
+              if (pathname === "/projects") navigate("/#fav-places");
+              setIsMenuOpened(false);
+            }}
+          >
+            Любимые места
+          </a>
         </li>
         <li className="menu__item">
-          <a href="#contact" onClick={() => setIsMenuOpened(false)}>Связаться</a>
+          <a
+            href="#contact"
+            onClick={() => {
+              if (pathname === "/projects") navigate("/#contact");
+              setIsMenuOpened(false);
+            }}
+          >
+            Связаться
+          </a>
         </li>
       </ul>
     </div>

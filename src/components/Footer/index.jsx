@@ -1,15 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import "./index.scss";
 import birdImg from "../../img/bird.png";
 import appDevelopment from "../../img/appDevelopment.png";
-
 
 function getMinutes(milliseconds) {
   return Math.floor(milliseconds / 60000);
 }
 
 export default function Footer() {
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+
   return (
     <footer className="footer">
       <section className="footer__about">
@@ -42,22 +44,40 @@ export default function Footer() {
         <nav className="navigation__nav">
           <ul className="nav__list">
             <li className="nav__item">
-              <a className="nav__item-link" href="#home-section">
-                <span>Главная</span>
-              </a>
+              {pathname === "/" ? (
+                <a className="nav__item-link" href="#home-section">
+                  <span>Главная</span>
+                </a>
+              ) : (
+                <Link className="nav__item-link" to="/">
+                  <span>Главная</span>
+                </Link>
+              )}
             </li>
             <li className="nav__item">
-              <Link className="nav__item-link" to="projects">
+              <Link className="nav__item-link" to="/projects">
                 <span>Проекты</span>
               </Link>
             </li>
             <li className="nav__item">
-              <a className="nav__item-link" href="#team">
+              <a
+                className="nav__item-link"
+                href="#team"
+                onClick={() => {
+                  if (pathname === "/projects") navigate("/#team");
+                }}
+              >
                 <span>Команда</span>
               </a>
             </li>
             <li className="nav__item">
-              <a className="nav__item-link" href="#fav-places">
+              <a
+                className="nav__item-link"
+                href="#fav-places"
+                onClick={() => {
+                  if (pathname === "/projects") navigate("/#fav-places");
+                }}
+              >
                 <span>Любимые места</span>
               </a>
             </li>
