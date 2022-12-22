@@ -60,6 +60,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 6px;
       max-width: 400px;
       margin: 5px 0;
 
@@ -102,6 +103,7 @@
 
       &.checkbox {
         margin: 15px 0;
+        margin-right: auto;
       }
 
       @media (max-width: 500px) {
