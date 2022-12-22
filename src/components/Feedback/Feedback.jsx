@@ -9,7 +9,8 @@ import Titles from "../Titles/Titles";
 function Feedback() {
   const { theme } = useContext(ThemeContext);
   const token = "5833738553:AAEMCjrwc4cdRe389dVNBmFhmXuNt5XCjGI";
-  const chatId = "997039388";
+  const chatId = "-870490551";
+//   const chatId = "997039388";
 
   const [valueName, setValueName] = useState("");
   const [valueEmail, setValueEmail] = useState("");
@@ -46,9 +47,6 @@ function Feedback() {
       setIsCorrectName(true);
     } else {
       text.style.visibility = "visible";
-      setIsCorrectName(false);
-    }
-    if (nameTrim === "") {
       setIsCorrectName(false);
     }
   };
