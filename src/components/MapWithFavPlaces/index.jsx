@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Map, Placemark } from "@pbe/react-yandex-maps";
 import classNames from "classnames";
 
+import { ThemeContext } from "../../context/ThemeProvider";
 import Titles from "../Titles/Titles";
 import favPlaces from "../../mock/favPlaces";
 import team from "../../mock/team";
@@ -19,13 +20,14 @@ function getPlaceById(id) {
 
 export default function MapWithFavPlaces() {
   const [activeMapMarker, setActiveMapMarker] = useState(null);
+  const { theme } = useContext(ThemeContext);
 
   function handleClickOnMapMarker(id) {
     setActiveMapMarker(id);
   }
 
   return (
-    <section className="favorite-places" id="fav-places">
+    <section className={classNames("favorite-places", { dark: theme === "dark" })} id="fav-places">
       <Titles title="Наши любимые места" subtitle="Рекомендуем посетить" />
       <div className="container">
         <ul className="favorite-places__data">

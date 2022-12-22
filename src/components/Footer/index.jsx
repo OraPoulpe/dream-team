@@ -1,5 +1,8 @@
+import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import classNames from "classnames";
 
+import { ThemeContext } from "../../context/ThemeProvider";
 import "./index.scss";
 import birdImg from "../../img/bird.png";
 import appDevelopment from "../../img/appDevelopment.png";
@@ -11,9 +14,10 @@ function getMinutes(milliseconds) {
 export default function Footer() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
+  const { theme } = useContext(ThemeContext);
 
   return (
-    <footer className="footer">
+    <footer className={classNames("footer", { dark: theme === "dark" })}>
       <section className="footer__about">
         <img src={birdImg} alt="bird" className="about__bird-img" />
         <div className="about__content">

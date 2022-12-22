@@ -1,20 +1,23 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import classNames from "classnames";
 
+import { ThemeContext } from "../../context/ThemeProvider";
 import Burger from "./Burger";
-import "./index.scss";
 import Menu from "./Menu";
 import LangMenu from "./LangMenu";
 import Theme from "./togglers/Theme";
 import Language from "./togglers/Language";
+import "./index.scss";
 
 export default function Header() {
+  const { theme } = useContext(ThemeContext);
   const [isMenuOpened, setIsMenuOpened] = useState(false);
   const [isLangMenuOpened, setIsLangMenuOpened] = useState(false);
 
   return (
     <>
-      <header className="header">
+      <header className={classNames("header", { dark: theme === "dark" })}>
         <div className="container">
           <Burger menuSettings={{ isMenuOpened, setIsMenuOpened }} />
           <h1 className="header__title"><Link to="/">DreamTeam</Link></h1>

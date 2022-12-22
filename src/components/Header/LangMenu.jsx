@@ -2,10 +2,12 @@ import { useContext, useEffect } from "react";
 import classNames from "classnames";
 
 import { LangContext } from "../../context/LangProvider";
+import { ThemeContext } from "../../context/ThemeProvider";
 
 export default function LangMenu({ langMenuSettings }) {
   const { isLangMenuOpened, setIsLangMenuOpened } = langMenuSettings;
   const { lang, dispatch } = useContext(LangContext);
+  const { theme } = useContext(ThemeContext);
 
   // При клике вне меню, меню закрывается
   useEffect(() => {
@@ -23,7 +25,7 @@ export default function LangMenu({ langMenuSettings }) {
   });
 
   return (
-    <div className={classNames("header__lang-menu", { open: isLangMenuOpened })}>
+    <div className={classNames("header__lang-menu", { open: isLangMenuOpened, dark: theme === "dark" })}>
       <ul className="lang-menu__list">
         <li className="lang-menu__item">
           <button

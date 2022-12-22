@@ -1,9 +1,16 @@
 :root {
   --title-font-size: 3.5rem;
+  --title-color: #494949;
+  --subtitle-color: #636363;
 }
 
 .title-block {
   margin-top: 60px;
+
+  &.dark {
+    --title-color: #b4b4b4;
+    --subtitle-color: #b4b4b4cc;
+  }
 
   .title,
   .subtitle {
@@ -12,14 +19,14 @@
   }
 
   .title {
-    color: #494949;
+    color: var(--title-color);
     font-weight: 600;
     margin-bottom: 5px;
   }
 
   .subtitle {
     font-size: calc(var(--title-font-size) * 0.5);
-    color: #636363;
+    color: var(--subtitle-color);
   }
 
   @media (max-width: 500px) {
