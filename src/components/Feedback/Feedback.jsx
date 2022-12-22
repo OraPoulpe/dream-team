@@ -1,24 +1,21 @@
-import React from "react";
-import styles from "./styleFeedback.module.css";
+import { useState } from "react";
+import classNames from "classnames";
+
+import "./index.scss";
 import svgFeedback from "./svgFeedback.svg";
 import Titles from "../Titles/Titles";
 
 function Feedback() {
   const token = "5833738553:AAEMCjrwc4cdRe389dVNBmFhmXuNt5XCjGI";
-//   const chatId = "-870490551";
   const chatId = "997039388";
 
-  const [valueName, setValueName] = React.useState("");
-  const [valueEmail, setValueEmail] = React.useState("");
-  const [valueText, setValueText] = React.useState("");
-  const [valueConsent, setValueConsent] = React.useState(false);
+  const [valueName, setValueName] = useState("");
+  const [valueEmail, setValueEmail] = useState("");
+  const [valueText, setValueText] = useState("");
+  const [valueConsent, setValueConsent] = useState(false);
 
-  const [isCorrectName, setIsCorrectName] = React.useState(false);
-  const [isCorrectEmail, setIsCorrectEmail] = React.useState(false);
-
-  /*
-  Send Form and Post request
-  */
+  const [isCorrectName, setIsCorrectName] = useState(false);
+  const [isCorrectEmail, setIsCorrectEmail] = useState(false);
 
   const handleSubmit = async (event) => {
     const message = `Новое сообщение
@@ -38,50 +35,35 @@ function Feedback() {
     setValueConsent(false);
   };
 
-  /*
-  Change Button Style
-  */
-  const checkStyle = () => {
-    if (valueConsent && isCorrectName && isCorrectEmail) {
-      return styles.button_submit_correct;
-    }
-    return styles.button_submit_not_correct;
-  };
-
-  /*
-  Validation Name
-  */
-
   const isValidName = (name) => {
     const text = document.getElementById("valid-name");
-    if (/^[a-zA-Z0-9а-яА-Я]+$/.test(name) || name === "") {
+    const nameTrim = name.trim();
+
+    if (/^[a-zA-Z0-9а-яА-Я]+$/.test(nameTrim) || nameTrim === "") {
       text.style.visibility = "hidden";
       setIsCorrectName(true);
     } else {
       text.style.visibility = "visible";
       setIsCorrectName(false);
     }
-    if (name === ""){
-        setIsCorrectName(false);
+    if (nameTrim === "") {
+      setIsCorrectName(false);
     }
   };
 
-  /*
-  Validation Email
-  */
-
   const isValidEmail = (email) => {
     const text = document.getElementById("valid-email");
+    const emailTrim = email.trim();
 
     if (
-      (/^[a-z0-9@.]+$/.test(email) &&
-        email.indexOf("@") !== -1 &&
-        email[0] !== "." &&
-        email[0] !== "_" &&
-        email.indexOf(".") !== -1 &&
-        email[email.indexOf("@") + 1] !== "." &&
-        email.slice(-1) !== ".") ||
-      email === ""
+      (/^[a-z0-9@.]+$/.test(emailTrim) &&
+        emailTrim.indexOf("@") !== -1 &&
+        emailTrim[0] !== "." &&
+        emailTrim[0] !== "_" &&
+        emailTrim.indexOf(".") !== -1 &&
+        emailTrim[emailTrim.indexOf("@") + 1] !== "." &&
+        emailTrim.slice(-1) !== ".") ||
+      emailTrim === ""
     ) {
       text.style.visibility = "hidden";
       setIsCorrectEmail(true);
@@ -89,32 +71,25 @@ function Feedback() {
       text.style.visibility = "visible";
       setIsCorrectEmail(false);
     }
-    if (email === ""){
-        setIsCorrectEmail(false);
+    if (emailTrim === "") {
+      setIsCorrectEmail(false);
     }
-  };
-
-  const checkDisabled = () => {
-    if (valueConsent && isCorrectName && isCorrectEmail) {
-      return false;
-    }
-    return true;
   };
 
   return (
-    <section className={styles.feedback}>
+    <section className="feedback">
       <Titles title="Мы всегда на связи" subtitle="Ваши предложения и отзывы" />
-      <div className={styles.feedback_layout}>
-        <img className={styles.svg} src={svgFeedback} alt="Изображение" />
-        <form className={styles.form_layout} onSubmit={(e) => handleSubmit(e)}>
-          <span className={styles.text_main_form}>Форма для связи с нами</span>
+      <div className="feedback__layout">
+        <img className="svg" src={svgFeedback} alt="Изображение" />
+        <form className="feedback__form" onSubmit={(e) => handleSubmit(e)}>
+          <span className="form__title">Форма для связи с нами</span>
 
-          <div className={styles.input_layout}>
-            <label className={styles.text_ladel} htmlFor="name">
+          <div className="form__input">
+            <label className="input__label" htmlFor="name">
               Как вас зовут
             </label>
             <input
-              className={styles.input}
+              className="input__field"
               value={valueName}
               type="text"
               placeholder=""
@@ -126,16 +101,16 @@ function Feedback() {
             />
           </div>
 
-          <span className={styles.validName} id="valid-name">
+          <span className="form__validation" id="valid-name">
             Имя не должно содержать знаков
           </span>
 
-          <div className={styles.input_layout}>
-            <label className={styles.text_ladel} htmlFor="email">
+          <div className="form__input">
+            <label className="input__ladel" htmlFor="email">
               Введите почту
             </label>
             <input
-              className={styles.input}
+              className="input__field"
               value={valueEmail}
               type="email"
               placeholder=""
@@ -147,16 +122,16 @@ function Feedback() {
             />
           </div>
 
-          <span className={styles.validName} id="valid-email">
+          <span className="form__validation" id="valid-email">
             Почта должна содержать @
           </span>
 
-          <div className={styles.input_layout}>
-            <label className={styles.text_ladel} htmlFor="message">
+          <div className="form__input">
+            <label className="input__label" htmlFor="message">
               Введите сообщение
             </label>
             <textarea
-              className={styles.input_textarea}
+              className="input__textarea"
               value={valueText}
               type="text"
               placeholder=""
@@ -167,21 +142,29 @@ function Feedback() {
             />
           </div>
 
-          <div className={styles.input_layout_checkbox}>
+          <div className="form__input checkbox">
             <input
-              className={styles.input_checkbox}
+              className="input__checkbox"
               type="checkbox"
               placeholder=""
               checked={valueConsent}
               onChange={() => {
                 setValueConsent(!valueConsent);
               }}
+              id="consent"
             />
-            {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-            <label className={styles.text_ladel}>Даю согласие на обработку персональных данных</label>
+            <label className="input__label" htmlFor="consent">
+              Даю согласие на обработку персональных данных
+            </label>
           </div>
           <span />
-          <button id="btn-submit" disabled={checkDisabled()} className={checkStyle()} type="submit">
+          <button
+            disabled={!(valueConsent && isCorrectName && isCorrectEmail)}
+            className={classNames("form__submit-btn", {
+              incorrect: !(valueConsent && isCorrectName && isCorrectEmail),
+            })}
+            type="submit"
+          >
             Отправить форму
           </button>
         </form>
