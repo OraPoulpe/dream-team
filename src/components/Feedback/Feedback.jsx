@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import classNames from "classnames";
+import { useTranslation } from "react-i18next";
 
 import { ThemeContext } from "../../context/ThemeProvider";
 import "./index.scss";
@@ -10,7 +11,7 @@ function Feedback() {
   const { theme } = useContext(ThemeContext);
   const token = "5833738553:AAEMCjrwc4cdRe389dVNBmFhmXuNt5XCjGI";
   const chatId = "-870490551";
-//   const chatId = "997039388";
+  //   const chatId = "997039388";
 
   const [valueName, setValueName] = useState("");
   const [valueEmail, setValueEmail] = useState("");
@@ -19,6 +20,8 @@ function Feedback() {
 
   const [isCorrectName, setIsCorrectName] = useState(false);
   const [isCorrectEmail, setIsCorrectEmail] = useState(false);
+
+  const { t } = useTranslation();
 
   const handleSubmit = async (event) => {
     const message = `Новое сообщение
@@ -78,15 +81,15 @@ function Feedback() {
 
   return (
     <section className={classNames("feedback", { dark: theme === "dark" })}>
-      <Titles title="Мы всегда на связи" subtitle="Ваши предложения и отзывы" />
+      <Titles title={t("Мы всегда на связи")} subtitle={t("Ваши предложения и отзывы")} />
       <div className="feedback__layout">
-        <img className="svg" src={svgFeedback} alt="Изображение" />
+        <img className="svg" src={svgFeedback} alt="Фото" />
         <form className="feedback__form" onSubmit={(e) => handleSubmit(e)}>
-          <span className="form__title">Форма для связи с нами</span>
+          <span className="form__title">{t("Форма для связи с нами")}</span>
 
           <div className="form__input">
             <label className="input__label" htmlFor="name">
-              Как вас зовут
+              {t("Как вас зовут")}
             </label>
             <input
               className="input__field"
@@ -102,12 +105,12 @@ function Feedback() {
           </div>
 
           <span className="form__validation" id="valid-name">
-            Имя не должно содержать знаков
+            {t("Имя не должно содержать знаков")}
           </span>
 
           <div className="form__input">
             <label className="input__label" htmlFor="email">
-              Введите почту
+              {t("Введите почту")}
             </label>
             <input
               className="input__field"
@@ -123,12 +126,12 @@ function Feedback() {
           </div>
 
           <span className="form__validation" id="valid-email">
-            Почта должна содержать @
+            {t("Почта должна содержать @")}
           </span>
 
           <div className="form__input">
             <label className="input__label" htmlFor="message">
-              Введите сообщение
+              {t("Введите сообщение")}
             </label>
             <textarea
               className="input__textarea"
@@ -154,7 +157,7 @@ function Feedback() {
               id="consent"
             />
             <label className="input__label" htmlFor="consent">
-              Даю согласие на обработку персональных данных
+              {t("Даю согласие на обработку персональных данных")}
             </label>
           </div>
           <span />
@@ -165,7 +168,7 @@ function Feedback() {
             })}
             type="submit"
           >
-            Отправить форму
+            {t("Отправить форму")}
           </button>
         </form>
       </div>
