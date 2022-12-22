@@ -25,7 +25,7 @@ export default function MapWithFavPlaces() {
   }
 
   return (
-    <section className="favorite-places">
+    <section className="favorite-places" id="fav-places">
       <Titles title="Наши любимые места" subtitle="Рекомендуем посетить" />
       <div className="container">
         <ul className="favorite-places__data">

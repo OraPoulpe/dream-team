@@ -8,11 +8,8 @@ export default function Home() {
   return (
     <>
       <HomeSection />
-      <div className="container-slider">
-        <SwiperSlider />
-      </div>
-
       <div className="container">
+        <SwiperSlider />
         <YMaps>
           <MapWithFavPlaces />
         </YMaps>

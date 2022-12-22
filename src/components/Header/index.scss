@@ -162,8 +162,8 @@ $burger-bar-width: 50px;
     .container {
       display: flex;
       align-items: flex-start;
+      justify-content: space-between;
       margin: 0 auto;
-      position: relative;
     }
 
     @media (max-width: 500px) {
@@ -172,7 +172,6 @@ $burger-bar-width: 50px;
   }
 
   &__menu {
-    position: absolute;
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
@@ -207,8 +206,6 @@ $burger-bar-width: 50px;
   }
 
   &__lang-menu {
-    position: absolute;
-    right: 0;
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
