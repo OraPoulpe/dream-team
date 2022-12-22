@@ -1,0 +1,111 @@
+:root {
+  --favorite-places-card-background-color: #fff;
+  --favorite-places-card-title-color: #000;
+  --favorite-places-card-place-active-color: #222;
+}
+
+.favorite-places {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  transition: 0.25s;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    gap: 16px;
+
+    @media (max-width: 1440px) {
+      width: 100%;
+    }
+
+    @media (max-width: 650px) {
+      flex-direction: column;
+      gap: 32px;
+    }
+  }
+
+  &.dark {
+    --favorite-places-card-background-color: #0b0c10;
+    --favorite-places-card-title-color: #b4b4b4;
+    --favorite-places-card-place-active-color: #fff;
+  }
+
+  &__data {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-height: 50vh;
+    overflow-y: scroll;
+    padding: 8px;
+    direction: rtl;
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #333;
+      border-radius: 10px;
+    }
+
+    .data__teammate {
+      background: var(--favorite-places-card-background-color);
+      box-shadow: 4px 4px 10px rgb(0 0 0 / 5%), -4px -4px 10px rgb(0 0 0 / 5%);
+      border-radius: 20px;
+      direction: ltr;
+      text-align: left;
+      padding: 32px;
+
+      .teammate__name {
+        font-size: 1.4rem;
+        color: var(--favorite-places-card-title-color);
+        font-weight: 500;
+        margin: 0;
+        margin-bottom: 12px;
+      }
+
+      .teammate__places {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        .places__place {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          cursor: pointer;
+          gap: 4px;
+
+          .place__map-marker {
+            height: 20px;
+          }
+
+          .place__address {
+            transition: 0.3s;
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #777;
+
+            &.active {
+              color: var(--favorite-places-card-place-active-color);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__map {
+    width: 100%;
+    height: 50vh;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,37 @@
+.tools__toggle-language {
+  $size: 2rem;
+
+  --icon-fill: hsl(210deg 10% 30%);
+  --icon-fill-hover: hsl(210deg 10% 10%);
+
+  background: none;
+  border: none;
+  padding: 0;
+  inline-size: $size;
+  block-size: $size;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  outline-offset: 5px;
+
+  & > svg {
+    inline-size: 100%;
+    block-size: 100%;
+    stroke-linecap: round;
+    transition: 0.25s;
+    fill: var(--icon-fill);
+  }
+
+  &:hover {
+    & > svg {
+      fill: var(--icon-fill-hover);
+    }
+  }
+
+  &[aria-label="dark"] {
+    --icon-fill: hsl(210deg 10% 70%);
+    --icon-fill-hover: hsl(210deg 15% 90%);
+  }
+}
