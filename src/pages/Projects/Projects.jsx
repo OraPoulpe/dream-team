@@ -1,5 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
+import classNames from "classnames";
 
+import { ThemeContext } from "../../context/ThemeProvider";
 import github from "../../img/icons/github-white.svg";
 import telegram from "../../img/icons/telegram-white.svg";
 import Titles from "../../components/Titles/Titles";
@@ -8,12 +10,13 @@ import "./Projects.scss";
 
 
 export default function Projects() {
+  const { theme } = useContext(ThemeContext);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [])
 
   return (
-    <main className="projects">
+    <section className={classNames("projects", { dark: theme === "dark" })}>
       <Titles
         title="Наши проекты"
         subtitle="Lorem ipsum dolor sit amet consectetur. Porta cursus qu+is blandit orci leo."
@@ -78,6 +81,6 @@ export default function Projects() {
             </div>
           ))}
       </div>
-    </main>
+    </section>
   );
 }
