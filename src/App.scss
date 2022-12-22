@@ -65,13 +65,19 @@ body {
 body {
   position: relative;
   font-family: "Open Sans", sans-serif;
-  transition: all 0.5s;
+  transition: all 0.25s;
   background: #efeff2;
   z-index: 2;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+html[data-theme="dark"] {
+  body {
+    background-color: #222;
+  }
 }
 
 input,
