@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import classNames from "classnames";
+import { useTranslation } from "react-i18next";
 
 import { ThemeContext } from "../../context/ThemeProvider";
 import "./index.scss";
@@ -15,6 +16,7 @@ export default function Footer() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const { theme } = useContext(ThemeContext);
+  const { t } = useTranslation();
 
   return (
     <footer className={classNames("footer", { dark: theme === "dark" })}>
@@ -23,19 +25,19 @@ export default function Footer() {
         <div className="about__content">
           <h2 className="about__title">DreamTeam</h2>
           <p className="about__start">
-            Отсчет с момента запуска проекта: {getMinutes(new Date() - new Date(2022, 11, 7, 17, 21))} мин
+            {t("Отсчет с момента запуска проекта")}: {getMinutes(new Date() - new Date(2022, 11, 7, 17, 21))} {t("мин")}
           </p>
           <p className="about__text">
           Мы ученики старших классов. Мы живем в разных уголках России, но всех нас объединяет любовь к
               программированию и Frontend-разработке
           </p>
           <a className="about__contact-btn" href="#contact">
-            Связаться
+            {t("Связаться")}
           </a>
           <p className="about__copyright">
             <span className="copyright__info">&copy; 2022 DreamTeam</span>
             <span className="copyright__plea">
-              Не забудьте поставить звездочку на нашем{" "}
+              {t("Не забудьте поставить звездочку на нашем")}{" "}
               <a href="https://github.com/krylovDev/dream-team/" target="_blank" rel="noreferrer">
                 GitHub
               </a>
@@ -44,23 +46,23 @@ export default function Footer() {
         </div>
       </section>
       <section className="footer__navigation">
-        <h2 className="navigation__title">Навигация по сайту</h2>
+        <h2 className="navigation__title">{t("Навигация по сайту")}</h2>
         <nav className="navigation__nav">
           <ul className="nav__list">
             <li className="nav__item">
               {pathname === "/" ? (
                 <a className="nav__item-link" href="#home-section">
-                  <span>Главная</span>
+                  <span>{t("Главная")}</span>
                 </a>
               ) : (
                 <Link className="nav__item-link" to="/">
-                  <span>Главная</span>
+                  <span>{t("Главная")}</span>
                 </Link>
               )}
             </li>
             <li className="nav__item">
               <Link className="nav__item-link" to="/projects">
-                <span>Проекты</span>
+                <span>{t("Проекты")}</span>
               </Link>
             </li>
             <li className="nav__item">
@@ -71,7 +73,7 @@ export default function Footer() {
                   if (pathname === "/projects") navigate("/#team");
                 }}
               >
-                <span>Команда</span>
+                <span>{t("Наша команда")}</span>
               </a>
             </li>
             <li className="nav__item">
@@ -82,7 +84,7 @@ export default function Footer() {
                   if (pathname === "/projects") navigate("/#fav-places");
                 }}
               >
-                <span>Любимые места</span>
+                <span>{t("Любимые места")}</span>
               </a>
             </li>
           </ul>
