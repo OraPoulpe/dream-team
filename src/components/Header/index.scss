@@ -1,15 +1,31 @@
 $burger-bar-height: 2px;
 $burger-bar-width: 50px;
+$top-header-height: 70px;
+
+// theme colors
+:root {
+  --header-background-color: rgb(255 255 255 / 75%);
+  --header-content-color: #22242a;
+  --header-menu-background-color: rgb(255 255 255 / 97%);
+  --header-menu-content-color: #22242a;
+  --header-onhover-color: #5c369a;
+  --header-menu-onhover-color: #5c369a;
+}
 
 .header {
-  $top-header-height: 70px;
-
   position: sticky;
   top: 0;
   z-index: 9;
-  background-color: rgb(255 255 255 / 75%);
+  background-color: var(--header-background-color);
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%);
+  transition: 0.25s;
+
+  &.dark {
+    --header-background-color: rgb(0 0 0 / 75%);
+    --header-content-color: #fff;
+    --header-onhover-color: #b98efe;
+  }
 
   .container {
     position: relative;
@@ -30,7 +46,7 @@ $burger-bar-width: 50px;
     .burger__bar2,
     .burger__bar3 {
       height: $burger-bar-height;
-      background-color: #494949;
+      background-color: var(--header-content-color);
       transition: all 0.3s;
       border-radius: 10px;
     }
@@ -91,11 +107,11 @@ $burger-bar-width: 50px;
     font-size: 2rem;
     line-height: 41px;
     letter-spacing: 0.02em;
-    color: #22242a;
+    color: var(--header-content-color);
     transition: all 0.3s;
 
     &:hover {
-      color: #5c369a;
+      color: var(--header-onhover-color);
     }
 
     a {
@@ -112,7 +128,6 @@ $burger-bar-width: 50px;
     align-items: center;
     gap: 12px;
     padding: 6px 12px;
-    background: #ffff;
     box-shadow: -2px -2px 10px rgb(0 0 0 / 10%), 2px 2px 10px rgb(0 0 0 / 10%);
     border-radius: 10px;
 
@@ -124,14 +139,13 @@ $burger-bar-width: 50px;
       justify-content: center;
       gap: 4px;
       padding: 4px;
-      background-color: #fff;
+      background-color: transparent;
       border-radius: 10px;
       font-style: normal;
       font-weight: 600;
       font-size: 14px;
       line-height: 16px;
       letter-spacing: 0.01em;
-      color: #22242a;
       transition: all 0.3s;
       cursor: pointer;
 
@@ -176,7 +190,7 @@ $burger-bar-width: 50px;
     opacity: 0;
     visibility: hidden;
     transition: 0.4s;
-    background-color: rgb(255 255 255 / 97%);
+    background-color: var(--header-menu-background-color);
     box-shadow: 0 0 15px 0 rgb(0 0 0 / 20%);
     border-radius: 5px;
     padding: 1rem;
@@ -185,6 +199,12 @@ $burger-bar-width: 50px;
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
+    }
+
+    &.dark {
+      --header-menu-background-color: rgb(0 0 0 / 75%);
+      --header-menu-content-color: #fff;
+      --header-menu-onhover-color: #b98efe;
     }
 
     .menu__list {
@@ -196,10 +216,10 @@ $burger-bar-width: 50px;
         font-size: inherit;
         font-weight: 500;
         transition: 0.2s;
-        color: #000;
+        color: var(--header-menu-content-color);
 
         &:hover {
-          color: #5c369a;
+          color: var(--header-menu-onhover-color);
         }
       }
     }
@@ -210,7 +230,7 @@ $burger-bar-width: 50px;
     opacity: 0;
     visibility: hidden;
     transition: 0.4s;
-    background-color: rgb(255 255 255 / 97%);
+    background-color: var(--header-menu-background-color);
     box-shadow: 0 0 15px 0 rgb(0 0 0 / 20%);
     border-radius: 5px;
     padding: 1rem;
@@ -219,6 +239,12 @@ $burger-bar-width: 50px;
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
+    }
+
+    &.dark {
+      --header-menu-background-color: rgb(0 0 0 / 75%);
+      --header-menu-content-color: #fff;
+      --header-menu-onhover-color: #b98efe;
     }
 
     .lang-menu__list {
@@ -230,12 +256,12 @@ $burger-bar-width: 50px;
         font-size: inherit;
         font-weight: 500;
         transition: 0.2s;
-        color: #000;
+        color: var(--header-menu-content-color);
         background: none;
       }
 
       .lang-menu__item:hover .lang-menu__item-btn {
-        color: #5c369a;
+        color: var(--header-menu-onhover-color);
       }
     }
   }

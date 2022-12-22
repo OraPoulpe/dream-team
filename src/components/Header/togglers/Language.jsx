@@ -1,7 +1,11 @@
 /* eslint-disable max-len */
+import { useContext } from "react";
+
+import { ThemeContext } from "../../../context/ThemeProvider";
 import "./language.scss";
 
 export default function Language({ langMenuSettings }) {
+  const { theme } = useContext(ThemeContext);
   const { isLangMenuOpened, setIsLangMenuOpened } = langMenuSettings;
   return (
     <button
@@ -9,6 +13,7 @@ export default function Language({ langMenuSettings }) {
       title="Toggles language"
       onClick={() => setIsLangMenuOpened(!isLangMenuOpened)}
       type="button"
+      aria-label={theme}
     >
       <svg width="512px" height="512px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
         <path d="M478.33,433.6l-90-218a22,22,0,0,0-40.67,0l-90,218a22,22,0,1,0,40.67,16.79L316.66,406H419.33l18.33,44.39A22,22,0,0,0,458,464a22,22,0,0,0,20.32-30.4ZM334.83,362,368,281.65,401.17,362Z" />
