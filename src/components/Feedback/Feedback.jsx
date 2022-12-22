@@ -5,8 +5,8 @@ import Titles from "../Titles/Titles";
 
 function Feedback() {
   const token = "5833738553:AAEMCjrwc4cdRe389dVNBmFhmXuNt5XCjGI";
-  const chatId = "-870490551";
-  // const chatId = "997039388";
+//   const chatId = "-870490551";
+  const chatId = "997039388";
 
   const [valueName, setValueName] = React.useState("");
   const [valueEmail, setValueEmail] = React.useState("");
@@ -61,6 +61,9 @@ function Feedback() {
       text.style.visibility = "visible";
       setIsCorrectName(false);
     }
+    if (name === ""){
+        setIsCorrectName(false);
+    }
   };
 
   /*
@@ -85,6 +88,9 @@ function Feedback() {
     } else {
       text.style.visibility = "visible";
       setIsCorrectEmail(false);
+    }
+    if (email === ""){
+        setIsCorrectEmail(false);
     }
   };
 
