@@ -1,5 +1,5 @@
 import React from "react";
-import "./Titles.css";
+import "./Titles.scss";
 
 export default function Titles({ title, subtitle }) {
   return (

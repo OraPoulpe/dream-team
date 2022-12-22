@@ -26,25 +26,25 @@ $burger-bar-width: 50px;
     gap: 8px;
     cursor: pointer;
 
-    & .burger__bar1,
-    & .burger__bar2,
-    & .burger__bar3 {
+    .burger__bar1,
+    .burger__bar2,
+    .burger__bar3 {
       height: $burger-bar-height;
       background-color: #494949;
       transition: all 0.3s;
       border-radius: 10px;
     }
 
-    & .burger__bar1 {
+    .burger__bar1 {
       width: $burger-bar-width;
     }
 
-    & .burger__bar2 {
+    .burger__bar2 {
       width: $burger-bar-width * 0.6;
       margin: 0 auto;
     }
 
-    & .burger__bar3 {
+    .burger__bar3 {
       width: $burger-bar-width;
     }
 
@@ -59,23 +59,51 @@ $burger-bar-width: 50px;
     &.open .burger__bar3 {
       transform: translate(-5px, -10px) rotate(45deg);
     }
+
+    @media (max-width: 500px) {
+      .burger__bar1,
+      .burger__bar2,
+      .burger__bar3 {
+        height: $burger-bar-height * 0.8;
+      }
+
+      .burger__bar1 {
+        width: $burger-bar-width * 0.8;
+      }
+
+      .burger__bar2 {
+        width: $burger-bar-width * 0.6 * 0.8;
+      }
+
+      .burger__bar3 {
+        width: $burger-bar-width * 0.8;
+      }
+
+      &.open .burger__bar3 {
+        transform: translate(-5px, -9px) rotate(45deg);
+      }
+    }
   }
 
-  &__title h1 {
+  &__title {
     font-style: normal;
     font-weight: 600;
-    font-size: 25px;
+    font-size: 2rem;
     line-height: 41px;
     letter-spacing: 0.02em;
     color: #22242a;
     transition: all 0.3s;
 
     &:hover {
-      opacity: 0.8;
+      color: #5c369a;
     }
 
     a {
       color: inherit;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 1.7rem;
     }
   }
 
@@ -110,6 +138,16 @@ $burger-bar-width: 50px;
       &:hover {
         opacity: 0.7;
       }
+
+      @media (max-width: 500px) {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      gap: 8px;
+      padding: 4px 8px;
     }
   }
 
@@ -119,17 +157,21 @@ $burger-bar-width: 50px;
     visibility: hidden;
     z-index: 8;
     top: $top-header-height + 4px;
+    font-size: 1.5rem;
 
     .container {
       display: flex;
       align-items: flex-start;
+      justify-content: space-between;
       margin: 0 auto;
-      position: relative;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 1.2rem;
     }
   }
 
   &__menu {
-    position: absolute;
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
@@ -151,7 +193,7 @@ $burger-bar-width: 50px;
       gap: 1rem;
 
       .menu__item a {
-        font-size: 1.5rem;
+        font-size: inherit;
         font-weight: 500;
         transition: 0.2s;
         color: #000;
@@ -164,8 +206,6 @@ $burger-bar-width: 50px;
   }
 
   &__lang-menu {
-    position: absolute;
-    right: 0;
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
@@ -187,7 +227,7 @@ $burger-bar-width: 50px;
       gap: 1rem;
 
       .lang-menu__item-btn {
-        font-size: 1.5rem;
+        font-size: inherit;
         font-weight: 500;
         transition: 0.2s;
         color: #000;

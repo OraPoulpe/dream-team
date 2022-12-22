@@ -1,5 +1,6 @@
-import "./index.scss";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
+import "./index.scss";
 import birdImg from "../../img/bird.png";
 import appDevelopment from "../../img/appDevelopment.png";
 
@@ -8,6 +9,9 @@ function getMinutes(milliseconds) {
 }
 
 export default function Footer() {
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+
   return (
     <footer className="footer">
       <section className="footer__about">
@@ -21,9 +25,9 @@ export default function Footer() {
             Lorem ipsum dolor sit amet consectetur. Risus nunc sit tristique fringilla. Sit sagittis interdum bibendum
             odio elit quis eu proin. Vitae gravida pellentesque interdum lobortis habitasse at nunc.
           </p>
-          <button className="about__contact-btn" type="button">
+          <a className="about__contact-btn" href="#contact">
             Связаться
-          </button>
+          </a>
           <p className="about__copyright">
             <span className="copyright__info">&copy; 2022 DreamTeam</span>
             <span className="copyright__plea">
@@ -40,23 +44,41 @@ export default function Footer() {
         <nav className="navigation__nav">
           <ul className="nav__list">
             <li className="nav__item">
-              <a className="nav__item-link" href="#top">
-                Главная
+              {pathname === "/" ? (
+                <a className="nav__item-link" href="#home-section">
+                  <span>Главная</span>
+                </a>
+              ) : (
+                <Link className="nav__item-link" to="/">
+                  <span>Главная</span>
+                </Link>
+              )}
+            </li>
+            <li className="nav__item">
+              <Link className="nav__item-link" to="/projects">
+                <span>Проекты</span>
+              </Link>
+            </li>
+            <li className="nav__item">
+              <a
+                className="nav__item-link"
+                href="#team"
+                onClick={() => {
+                  if (pathname === "/projects") navigate("/#team");
+                }}
+              >
+                <span>Команда</span>
               </a>
             </li>
             <li className="nav__item">
-              <a className="nav__item-link" href="#projects">
-                Проекты
-              </a>
-            </li>
-            <li className="nav__item">
-              <a className="nav__item-link" href="#team">
-                Команда
-              </a>
-            </li>
-            <li className="nav__item">
-              <a className="nav__item-link" href="#fav-places">
-                Любимые места
+              <a
+                className="nav__item-link"
+                href="#fav-places"
+                onClick={() => {
+                  if (pathname === "/projects") navigate("/#fav-places");
+                }}
+              >
+                <span>Любимые места</span>
               </a>
             </li>
           </ul>

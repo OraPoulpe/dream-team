@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import Burger from "./Burger";
 import "./index.scss";
@@ -16,9 +17,7 @@ export default function Header() {
       <header className="header">
         <div className="container">
           <Burger menuSettings={{ isMenuOpened, setIsMenuOpened }} />
-          <div className="header__title">
-            <h1><a href="/">teamFrame</a></h1>
-          </div>
+          <h1 className="header__title"><Link to="/">DreamTeam</Link></h1>
           <div className="header__tools">
             <Theme />
             <Language langMenuSettings={{ isLangMenuOpened, setIsLangMenuOpened }} />

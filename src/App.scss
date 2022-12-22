@@ -10,14 +10,11 @@
   }
 }
 
-.container-slider {
-  width: 1440px;
-  margin: 0 auto;
-
-  @media (max-width: 1440px) {
-    width: 100%;
-    padding: 0 20px;
-  }
+main > .container {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  margin-bottom: 64px;
 }
 
 * {
