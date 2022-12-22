@@ -5,8 +5,8 @@ import Titles from "../Titles/Titles";
 
 function Feedback() {
   const token = "5833738553:AAEMCjrwc4cdRe389dVNBmFhmXuNt5XCjGI";
-  const chatId = "-870490551";
-  // const chatId = "997039388";
+//   const chatId = "-870490551";
+  const chatId = "997039388";
 
   const [valueName, setValueName] = React.useState("");
   const [valueEmail, setValueEmail] = React.useState("");
@@ -61,6 +61,9 @@ function Feedback() {
       text.style.visibility = "visible";
       setIsCorrectName(false);
     }
+    if (name === ""){
+        setIsCorrectName(false);
+    }
   };
 
   /*
@@ -86,6 +89,9 @@ function Feedback() {
       text.style.visibility = "visible";
       setIsCorrectEmail(false);
     }
+    if (email === ""){
+        setIsCorrectEmail(false);
+    }
   };
 
   const checkDisabled = () => {
@@ -96,12 +102,12 @@ function Feedback() {
   };
 
   return (
-    <section className={styles.feedback} id="contact">
-      <Titles title="Мы всегда на связи" subtitle="Принимаем сообщения 24/7" />
+    <section className={styles.feedback}>
+      <Titles title="Мы всегда на связи" subtitle="Ваши предложения и отзывы" />
       <div className={styles.feedback_layout}>
         <img className={styles.svg} src={svgFeedback} alt="Изображение" />
         <form className={styles.form_layout} onSubmit={(e) => handleSubmit(e)}>
-          <legend className={styles.text_main_form}>Форма для связи с нами</legend>
+          <span className={styles.text_main_form}>Форма для связи с нами</span>
 
           <div className={styles.input_layout}>
             <label className={styles.text_ladel} htmlFor="name">

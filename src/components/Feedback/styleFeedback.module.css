@@ -1,10 +1,14 @@
 .feedback {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 40px;
+  /* background-color: #E7E7E7; */
 }
 
 .feedback_layout {
+  margin-bottom: 60px;
   display: flex;
   justify-content: center;
 
@@ -23,8 +27,9 @@
 
     /* align-items: left; */
     justify-content: left;
-
-    /* max-height: 100px; */
+  }
+  .text_main_form {
+    font-size: 15px;
   }
 }
 
